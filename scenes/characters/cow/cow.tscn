@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dsl7kq4hvi781"]
+
+[ext_resource type="Script" uid="uid://d4g68e31qxmpt" path="res://scenes/characters/cow/cow.gd" id="1_j7g5r"]
+[ext_resource type="Texture2D" uid="uid://brgwl1q3vbo3w" path="res://assets/game/characters/free_cow_sprites.png" id="2_j7g5r"]
+[ext_resource type="Script" uid="uid://cn0yacf0m8i2t" path="res://scripts/state_machine/node_finite_state_machine.gd" id="3_8fuva"]
+[ext_resource type="Script" uid="uid://bfoax8nbsbw0" path="res://scenes/characters/npc_states/idle_state.gd" id="4_qvfuw"]
+[ext_resource type="Script" uid="uid://bs0te6kn0pk5a" path="res://scenes/characters/npc_states/walk_state.gd" id="5_p8p4x"]
+[ext_resource type="PackedScene" uid="uid://dae6yg14xuoxh" path="res://audio/sfx/cow_moo_1sfx.tscn" id="6_cgos1"]
+[ext_resource type="PackedScene" uid="uid://bogc2hl7ce7nk" path="res://scenes/compoments/audio_play_time_componment.tscn" id="7_gsrfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jynl"]
+atlas = ExtResource("2_j7g5r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgos1"]
+atlas = ExtResource("2_j7g5r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsrfl"]
+atlas = ExtResource("2_j7g5r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cmdg"]
+atlas = ExtResource("2_j7g5r")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_essvg"]
+atlas = ExtResource("2_j7g5r")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2exp5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jynl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgos1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsrfl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cmdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_essvg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npq42"]
+size = Vector2(11, 6.5)
+
+[node name="Cow" type="CharacterBody2D" unique_id=662509281]
+y_sort_enabled = true
+position = Vector2(0, -8)
+collision_layer = 64
+script = ExtResource("1_j7g5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1843143864]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_2exp5")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709685984]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_npq42")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1188630693]
+path_desired_distance = 10.0
+navigation_layers = 2
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 5.0
+
+[node name="StateMachine" type="Node" parent="." unique_id=398647824 node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("3_8fuva")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node2D" parent="StateMachine" unique_id=1854262596 node_paths=PackedStringArray("character", "animated_sprite_2d")]
+position = Vector2(0, -7)
+script = ExtResource("4_qvfuw")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node2D" parent="StateMachine" unique_id=1959737480 node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
+position = Vector2(0, -7)
+script = ExtResource("5_p8p4x")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="CowMoo1SFX" parent="." unique_id=1354236622 instance=ExtResource("6_cgos1")]
+
+[node name="AudioPlayTimeComponment" parent="." unique_id=234853393 node_paths=PackedStringArray("audio_stream_player_2d") instance=ExtResource("7_gsrfl")]
+wait_time = 5.0
+autostart = true
+audio_stream_player_2d = NodePath("../CowMoo1SFX")

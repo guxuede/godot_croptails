@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djfu3v6d3jgx0"]
+
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/shake.gdshader" id="1_a3xm2"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_a3xm2")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0

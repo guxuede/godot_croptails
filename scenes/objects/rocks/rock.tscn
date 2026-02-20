@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://btiac564gn5w4"]
+
+[ext_resource type="Material" uid="uid://vemkm1jpnyi0" path="res://scenes/objects/rocks/rock_shader_material.tres" id="1_bntui"]
+[ext_resource type="Texture2D" uid="uid://ctuglwj0e8ost" path="res://assets/game/objects/basic_grass_biom_things.png" id="2_cspju"]
+[ext_resource type="Script" uid="uid://c15pr6j6kos1x" path="res://scenes/objects/rocks/rock.gd" id="3_bntui"]
+[ext_resource type="PackedScene" uid="uid://bs65pabtitpwa" path="res://scenes/compoments/hurt_compoment.tscn" id="4_fob2m"]
+[ext_resource type="PackedScene" uid="uid://c3p8f43k1heu4" path="res://scenes/compoments/damage_compoment.tscn" id="5_yrcuq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bntui"]
+atlas = ExtResource("2_cspju")
+region = Rect2(128, 18, 16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo82u"]
+size = Vector2(8, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74dbl"]
+size = Vector2(11, 10)
+
+[node name="Rock" type="Sprite2D" unique_id=1984333164]
+material = ExtResource("1_bntui")
+position = Vector2(0, -5)
+texture = SubResource("AtlasTexture_bntui")
+script = ExtResource("3_bntui")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2045051798]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1053647997]
+shape = SubResource("RectangleShape2D_uo82u")
+
+[node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("4_fob2m")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1418342657]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_74dbl")
+debug_color = Color(0.7159947, 0.3617984, 0.8143545, 0.41960785)
+
+[node name="DamageCompoment" parent="." unique_id=10431394 instance=ExtResource("5_yrcuq")]
+max_damage = 2

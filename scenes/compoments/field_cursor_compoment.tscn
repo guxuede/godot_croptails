@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fbfhfjldgv1"]
+
+[ext_resource type="Script" uid="uid://s1r5h722dq7u" path="res://scenes/compoments/field_cursor_compoment.gd" id="1_070ph"]
+
+[node name="FieldCursorCompoment" type="Node2D" unique_id=1258762515]
+script = ExtResource("1_070ph")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1973972258]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+border_color = Color(0.455522, 0.557966, 0.5640201, 1)
+editor_only = false

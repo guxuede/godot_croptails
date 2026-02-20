@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dpabu3wul0p56"]
+
+[ext_resource type="Script" uid="uid://bphivrf34ro4m" path="res://scenes/compoments/test_secen_enable_tool_button_componment.gd" id="1_3ni1l"]
+
+[node name="TestSecenEnableToolButtonComponment" type="Node2D" unique_id=2135436231]
+script = ExtResource("1_3ni1l")

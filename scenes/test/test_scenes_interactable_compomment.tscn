@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://vfupcnlavxg2"]
+
+[ext_resource type="PackedScene" uid="uid://cqawq4fpa5tt6" path="res://scenes/characters/guide/guide.tscn" id="1_4i6m4"]
+[ext_resource type="PackedScene" uid="uid://dx2wcfeo5nh5q" path="res://scenes/characters/Player/player.tscn" id="2_lag52"]
+[ext_resource type="Script" uid="uid://c3pc681it6lri" path="res://scenes/test/area_2d.gd" id="3_4wq4s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lag52"]
+radius = 48.04165
+
+[node name="TestScenesInteractableCompomment" type="Node2D" unique_id=990142640]
+
+[node name="Guide" parent="." unique_id=1510358993 instance=ExtResource("1_4i6m4")]
+position = Vector2(168, 129)
+
+[node name="Player" parent="." unique_id=662509281 instance=ExtResource("2_lag52")]
+position = Vector2(361, 137)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=20842984]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_4wq4s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1962595314]
+position = Vector2(55, 53)
+shape = SubResource("CircleShape2D_lag52")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

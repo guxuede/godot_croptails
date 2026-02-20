@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://btxbvwcktm56e"]
+
+[ext_resource type="Script" uid="uid://d1vck6q2v7w3m" path="res://scenes/objects/chest/chest.gd" id="1_umtkn"]
+[ext_resource type="Texture2D" uid="uid://b37g2pdv8jbiq" path="res://assets/game/objects/chest.png" id="1_yv7tv"]
+[ext_resource type="PackedScene" uid="uid://bqvxff8bnv2gm" path="res://scenes/compoments/interactable_componment.tscn" id="2_vmxm4"]
+[ext_resource type="PackedScene" uid="uid://dbmjdyo56u2i6" path="res://scenes/compoments/interactable_lable_componment.tscn" id="3_8pawo"]
+[ext_resource type="PackedScene" uid="uid://5m71ohb405od" path="res://scenes/compoments/feed_compoment.tscn" id="5_ayji6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
+size = Vector2(16, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmxm4"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pawo"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqprm"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umtkn"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayji6"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44sq4"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrpii"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osdbi"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23oep"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cugcg"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmcsr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmxm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pawo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqprm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umtkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayji6")
+}],
+"loop": false,
+"name": &"closing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44sq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrpii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osdbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23oep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cugcg")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pawo"]
+size = Vector2(38, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umtkn"]
+
+[node name="Chest" type="StaticBody2D" unique_id=1821482421]
+script = ExtResource("1_umtkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1341295977]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_umtkn")
+debug_color = Color(0.63968337, 0.41820636, 0.82166, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1834629639]
+sprite_frames = SubResource("SpriteFrames_hmcsr")
+animation = &"closing"
+frame = 4
+frame_progress = 1.0
+
+[node name="InteractableComponment" parent="." unique_id=679602041 instance=ExtResource("2_vmxm4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponment" unique_id=2023562726]
+shape = SubResource("RectangleShape2D_8pawo")
+
+[node name="InteractableLableComponment" parent="." unique_id=1978500739 instance=ExtResource("3_8pawo")]
+offset_left = -24.0
+offset_top = -29.0
+offset_right = -6.0
+offset_bottom = -11.0
+
+[node name="RewardMarker" type="Marker2D" parent="." unique_id=1307808672]
+position = Vector2(19, 17)
+
+[node name="FeedCompoment" parent="." unique_id=388955185 instance=ExtResource("5_ayji6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeedCompoment" unique_id=62186154]
+shape = SubResource("CircleShape2D_umtkn")
+debug_color = Color(1.347661e-06, 0.6245252, 0.53107834, 0.41960785)

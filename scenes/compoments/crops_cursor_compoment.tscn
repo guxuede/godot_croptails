@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d4i48jhu58dli"]
+
+[ext_resource type="Script" uid="uid://dncrltry884c1" path="res://scenes/compoments/crops_cursor_compoment.gd" id="1_866cu"]
+
+[node name="CropsCursorCompoment" type="Node2D" unique_id=1064086711]
+script = ExtResource("1_866cu")

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bc6gn3igpst5j"]
+
+[ext_resource type="Material" uid="uid://djfu3v6d3jgx0" path="res://scenes/compoments/tree_shake_shader_material.tres" id="1_74dbl"]
+[ext_resource type="Texture2D" uid="uid://ctuglwj0e8ost" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_uo82u"]
+[ext_resource type="Script" uid="uid://t8k2aaxbnvgj" path="res://scenes/objects/trees/apple_tree.gd" id="2_65spk"]
+[ext_resource type="PackedScene" uid="uid://bs65pabtitpwa" path="res://scenes/compoments/hurt_compoment.tscn" id="4_65spk"]
+[ext_resource type="PackedScene" uid="uid://c3p8f43k1heu4" path="res://scenes/compoments/damage_compoment.tscn" id="5_74dbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8lho"]
+atlas = ExtResource("1_uo82u")
+region = Rect2(48, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo82u"]
+size = Vector2(10, 9.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74dbl"]
+size = Vector2(12, 18)
+
+[node name="AppleTree" type="Sprite2D" unique_id=1984333164]
+material = ExtResource("1_74dbl")
+position = Vector2(0, -12)
+texture = SubResource("AtlasTexture_f8lho")
+script = ExtResource("2_65spk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2045051798]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1053647997]
+position = Vector2(0, 9.25)
+shape = SubResource("RectangleShape2D_uo82u")
+
+[node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("4_65spk")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1418342657]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_74dbl")
+debug_color = Color(0.7159947, 0.3617984, 0.8143545, 0.41960785)
+
+[node name="DamageCompoment" parent="." unique_id=10431394 instance=ExtResource("5_74dbl")]
+max_damage = 2

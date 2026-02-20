@@ -1,0 +1,15 @@
+~ start
+Greg: [[Hi|Hello|Howdy]], nice to meet you.
+Greg: Welcome to your new farm.
+Greg: As you can see the cow and chikens are hungry.
+Greg: you need feed them.
+Greg: Here are some seeds to grow some crops.
+do GameDialogueManager.action_give_crop_seeds()
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END
