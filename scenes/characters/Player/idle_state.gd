@@ -21,7 +21,8 @@ func on_physics_process(_delta : float):
 		animated_sprite_2d.play("idle_right")
 	else:
 		animated_sprite_2d.play("idle_front")
-		
+
+func _unhandled_input(event: InputEvent) -> void:
 	GameInputEvents.movement_input()
 	if GameInputEvents.is_movement_input():
 		transition.emit("Walk")

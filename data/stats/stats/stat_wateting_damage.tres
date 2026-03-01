@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://dtdm6vv3h420e"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_cd7o4"]
+
+[resource]
+resource_name = "wateting_damage"
+script = ExtResource("1_cd7o4")
+id = "wateting_damage"
+base_value = 1.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"

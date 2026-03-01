@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://dhwl4sgrl6ti1"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats_system/scripts/script_stat.gd" id="1_00nbj"]
+
+[resource]
+resource_name = "movement_speed"
+script = ExtResource("1_00nbj")
+id = "movement_speed"
+base_value = 1.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bbtgbbcfomqre"]
+
+[ext_resource type="Script" uid="uid://dtisht2petuik" path="res://scenes/objects/plants/plant_template.gd" id="1_cs7lv"]
+[ext_resource type="Texture2D" uid="uid://x30hl2k8be3p" path="res://assets/game/objects/basic_plants.png" id="2_4hd6w"]
+[ext_resource type="PackedScene" uid="uid://by2jv3dui1mqp" path="res://scenes/objects/plants/watering_partices.tscn" id="3_j5xne"]
+[ext_resource type="PackedScene" uid="uid://dopilckgg6lhv" path="res://scenes/objects/plants/flowering_partices.tscn" id="4_jg4hw"]
+[ext_resource type="PackedScene" uid="uid://dycu5a8e152u8" path="res://scenes/objects/plants/growth_cycle_compoment.tscn" id="5_dn33u"]
+[ext_resource type="PackedScene" uid="uid://bs65pabtitpwa" path="res://scenes/compoments/hurt_compoment.tscn" id="6_w6kp5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofjf8"]
+atlas = ExtResource("2_4hd6w")
+region = Rect2(16, 0, 64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgaca"]
+size = Vector2(13, 8)
+
+[node name="PlantTemplate" type="Node2D" unique_id=688950611]
+script = ExtResource("1_cs7lv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575364944]
+position = Vector2(0, -4)
+texture = SubResource("AtlasTexture_ofjf8")
+hframes = 4
+
+[node name="WateringPartices" parent="." unique_id=791934832 instance=ExtResource("3_j5xne")]
+
+[node name="FloweringPartices" parent="." unique_id=370637163 instance=ExtResource("4_jg4hw")]
+
+[node name="GrowthCycleCompoment" parent="." unique_id=1171869428 instance=ExtResource("5_dn33u")]
+
+[node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("6_w6kp5")]
+position = Vector2(0, -4)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1608093673]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_hgaca")

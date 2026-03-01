@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://hyewimsxjncd"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats_system/scripts/script_stat.gd" id="1_kngy6"]
+
+[resource]
+resource_name = "health"
+script = ExtResource("1_kngy6")
+id = "health"
+base_value = 150.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"

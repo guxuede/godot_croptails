@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://o6g61xdkjii0"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_l1tc0"]
+[ext_resource type="Script" uid="uid://qaysak7mjhy6" path="res://scenes/ui/inventory/inventory_grid.gd" id="1_yjyyb"]
+[ext_resource type="Script" uid="uid://d0pfc3q6sof8y" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="2_ptyr5"]
+[ext_resource type="Texture2D" uid="uid://bsst1a78g2j0y" path="res://assets/ui/basic_ui_sprites.png" id="4_ahsge"]
+[ext_resource type="JSON" path="res://data/inventory/protoset_grid.json" id="6_3apg1"]
+[ext_resource type="Script" uid="uid://5hfig5q3x8it" path="res://addons/gloot/core/inventory.gd" id="9_a6m37"]
+[ext_resource type="Script" uid="uid://b8hbvp4kl88cn" path="res://addons/gloot/core/constraints/grid_constraint.gd" id="10_6njuc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1tc0"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1tc0"]
+atlas = SubResource("CompressedTexture2D_l1tc0")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3thso"]
+texture = SubResource("AtlasTexture_l1tc0")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iei27"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahsge"]
+atlas = SubResource("CompressedTexture2D_iei27")
+region = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vm3c3"]
+texture = SubResource("AtlasTexture_ahsge")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f8pm4"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3thso"]
+atlas = SubResource("CompressedTexture2D_f8pm4")
+region = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1tc0"]
+texture = SubResource("AtlasTexture_3thso")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iupys"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9865218, 0.7395956, 0.58023655, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3apg1"]
+bg_color = Color(0.41960785, 0.29411766, 0.35686275, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iei27"]
+atlas = ExtResource("4_ahsge")
+region = Rect2(773, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh0xk"]
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh0xk"]
+atlas = ExtResource("4_ahsge")
+region = Rect2(645, 164, 22, 24)
+
+[node name="InventoryGrid" type="PanelContainer" unique_id=2116003971]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -110.5
+offset_right = 166.0
+offset_bottom = 110.5
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_l1tc0")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("1_yjyyb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1764811328]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=769133271]
+layout_mode = 2
+text = "INVENTORY"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=723526962]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=593875883]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1550418943]
+layout_mode = 2
+
+[node name="CtrlInventoryGrid" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer" unique_id=1898872676 node_paths=PackedStringArray("inventory")]
+texture_filter = 1
+custom_minimum_size = Vector2(152, 152)
+layout_mode = 2
+script = ExtResource("2_ptyr5")
+inventory = NodePath("../../../../../Inventory")
+stretch_item_icons = false
+item_spacing = -2
+drag_tint = Color(0.76640093, 0.65373933, 0.3243797, 1)
+field_style = SubResource("StyleBoxTexture_3thso")
+field_highlighted_style = SubResource("StyleBoxTexture_vm3c3")
+field_selected_style = SubResource("StyleBoxTexture_l1tc0")
+selection_style = SubResource("StyleBoxFlat_iupys")
+background_style = SubResource("StyleBoxFlat_3apg1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2007326303]
+layout_mode = 2
+
+[node name="BtnSort" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=33266240]
+layout_mode = 2
+tooltip_text = "Sort"
+theme_type_variation = &"InventoryButton"
+theme_override_icons/icon = SubResource("AtlasTexture_iei27")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bh0xk")
+
+[node name="BtnSplit" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=514452193]
+layout_mode = 2
+tooltip_text = "Split"
+theme_type_variation = &"InventoryButton"
+theme_override_styles/normal = SubResource("StyleBoxTexture_bh0xk")
+icon = SubResource("AtlasTexture_bh0xk")
+
+[node name="Inventory" type="Node" parent="." unique_id=1020485634]
+script = ExtResource("9_a6m37")
+protoset = ExtResource("6_3apg1")
+_serialized_format = {
+"constraints": {
+"res://addons/gloot/core/constraints/grid_constraint.gd": {
+"data": {
+"insertion_priority": 0,
+"item_positions": {
+"1": "Vector2i(1, 0)",
+"2": "Vector2i(2, 0)"
+},
+"size": "Vector2i(5, 5)"
+},
+"name": &"GridConstraint"
+}
+},
+"items": [{
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "tomato_seed"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "tomato"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "corn_seed"
+}],
+"node_name": "Inventory",
+"protoset": "res://data/inventory/protoset_grid.json"
+}
+
+[node name="GridConstraint" type="Node" parent="Inventory" unique_id=2090537956]
+script = ExtResource("10_6njuc")
+size = Vector2i(5, 5)
+insertion_priority = 0
+
+[connection signal="item_removed" from="Inventory" to="." method="_on_inventory_item_removed"]

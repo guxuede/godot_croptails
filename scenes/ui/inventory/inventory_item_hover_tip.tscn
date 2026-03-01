@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://badlfqgwimenh"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_cl7pa"]
+[ext_resource type="Script" uid="uid://bsqveqo2wgw8l" path="res://scenes/ui/inventory/inventory_item_hover_tip.gd" id="1_yh7an"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="3_c5pmp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl7pa"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9797335, 0.76242745, 0.3263453, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="InventoryItemHoverTip" type="PanelContainer" unique_id=1540537942]
+offset_right = 33.0
+offset_bottom = 27.0
+theme = ExtResource("1_cl7pa")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cl7pa")
+script = ExtResource("1_yh7an")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1950326166]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1633672153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=834862191]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_c5pmp")
+text = "Test"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1409581895]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_c5pmp")
+theme_override_fonts/bold_font = ExtResource("3_c5pmp")
+theme_override_fonts/bold_italics_font = ExtResource("3_c5pmp")
+theme_override_fonts/italics_font = ExtResource("3_c5pmp")
+theme_override_fonts/mono_font = ExtResource("3_c5pmp")
+bbcode_enabled = true
+text = "Hi a"
+fit_content = true

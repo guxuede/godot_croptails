@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://de167cyn3bbkr" path="res://scenes/compoments/mouse_cursor_componment.tscn" id="1_4w7vw"]
 [ext_resource type="PackedScene" uid="uid://ups4mwctcy0s" path="res://scenes/compoments/day_night_cycle_compoment.tscn" id="1_u56yu"]
 [ext_resource type="PackedScene" uid="uid://bvgxw7xbb6abd" path="res://scenes/levels/level_1.tscn" id="2_7c6xg"]
-[ext_resource type="PackedScene" uid="uid://d0dhtip02w7f6" path="res://scenes/ui/game_screen.tscn" id="2_htyc7"]
 [ext_resource type="Texture2D" uid="uid://30at55q8eyou" path="res://assets/ui/mouse_icon.png" id="2_vckk7"]
 [ext_resource type="PackedScene" uid="uid://dx2wcfeo5nh5q" path="res://scenes/characters/Player/player.tscn" id="3_7c6xg"]
+[ext_resource type="PackedScene" uid="uid://d3crrnekpthjv" path="res://scenes/ui/game_screen_v1.tscn" id="6_4w7vw"]
 
 [node name="MainScenes" type="Node2D" unique_id=656996609]
 
@@ -28,4 +28,4 @@ position = Vector2(900, 518)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player" unique_id=1550422100]
 
-[node name="GameScreen" parent="." unique_id=1672369374 instance=ExtResource("2_htyc7")]
+[node name="GameScreen1" parent="." unique_id=1672369374 instance=ExtResource("6_4w7vw")]

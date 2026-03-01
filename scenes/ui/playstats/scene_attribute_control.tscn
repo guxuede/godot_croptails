@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c5ubqa1yvekcr"]
+
+[ext_resource type="Script" uid="uid://cvj8pogsewci3" path="res://addons/antipixel_stats/scripts/script_stat_label.gd" id="1_68hbo"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="1_wco60"]
+
+[sub_resource type="GDScript" id="GDScript_1hrbo"]
+script/source = "@tool
+extends StatControl
+
+@export_group(\"Parameters\")
+@export var attribute_expression: StatExpression
+@export var stat_expresions: Array[StatExpression]
+
+@export_group(\"References\")
+@export var add_button: Button
+@export var subtract_button: Button
+
+var attribute: Stat:
+	get: return attribute_expression.stat
+
+func _ready() -> void:
+	add_button.pressed.connect(_on_add_button_pressed)
+	subtract_button.pressed.connect(_on_subtract_button_pressed)
+
+func _on_add_button_pressed() -> void:
+	if attribute.value < attribute.max_stat.value:
+		do(func(e: StatExpression) -> void: e.apply())
+	attribute_expression.apply()
+
+func _on_subtract_button_pressed() -> void:
+	if attribute.value > attribute.min_stat.value:
+		do(func(e: StatExpression) -> void: e.inverse())
+	attribute_expression.inverse()
+
+func do(f: Callable) -> void:
+	for expression: StatExpression in stat_expresions:
+		f.call(expression)
+
+func update() -> void:
+	if name_label:
+		name_label.text = name_text
+	if stat_label:
+		if stat: stat_label.stat = stat
+		stat_label.prefix = prefix
+		stat_label.suffix = suffix
+		stat_label.is_percentage = is_percentage
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7260"]
+bg_color = Color(0.62711036, 0.43370602, 0.23663998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lfbr"]
+bg_color = Color(0.4794113, 0.3818457, 0.2813574, 1)
+
+[node name="AttributeControl" type="HBoxContainer" unique_id=1746184534 node_paths=PackedStringArray("add_button", "subtract_button", "name_label", "stat_label")]
+script = SubResource("GDScript_1hrbo")
+add_button = NodePath("AddButton")
+subtract_button = NodePath("SubtractButton")
+name_label = NodePath("NameLabel")
+stat_label = NodePath("StatLabel")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1947569693]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_wco60")
+theme_override_font_sizes/font_size = 8
+
+[node name="StatLabel" type="Label" parent="." unique_id=1633569305]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_wco60")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("1_68hbo")
+
+[node name="AddButton" type="Button" parent="." unique_id=2053016331]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_x7260")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1lfbr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1lfbr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1lfbr")
+text = "+"
+
+[node name="SubtractButton" type="Button" parent="." unique_id=308758351]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_x7260")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1lfbr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1lfbr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1lfbr")
+text = "-"

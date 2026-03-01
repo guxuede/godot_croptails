@@ -11,8 +11,6 @@ func _ready() -> void:
 
 func play_emote(animation: String) -> void:
 	animated_sprite_2d.play(animation)
-	
-	
 
 
 func _on_emote_idle_timer_timeout() -> void:

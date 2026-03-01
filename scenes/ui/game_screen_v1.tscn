@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://d3crrnekpthjv"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_fidqs"]
+[ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_4xsby"]
+[ext_resource type="PackedScene" uid="uid://o6g61xdkjii0" path="res://scenes/ui/inventory/inventory_grid.tscn" id="3_fidqs"]
+[ext_resource type="PackedScene" uid="uid://dfsjdhq77b0k1" path="res://scenes/ui/inventory/inventory_tools_panel.tscn" id="4_fidqs"]
+[ext_resource type="PackedScene" uid="uid://8qpho0ri8727" path="res://scenes/ui/day_and_night_panel.tscn" id="5_ggo0w"]
+[ext_resource type="PackedScene" uid="uid://badlfqgwimenh" path="res://scenes/ui/inventory/inventory_item_hover_tip.tscn" id="6_4xsby"]
+[ext_resource type="PackedScene" uid="uid://dby83dw8j507g" path="res://scenes/ui/playstats/player_equipment_panel.tscn" id="7_ggo0w"]
+[ext_resource type="PackedScene" uid="uid://517ep6riku6q" path="res://scenes/ui/inventory_shop/shop_grid.tscn" id="7_q7fx3"]
+[ext_resource type="PackedScene" uid="uid://bmicqimaygyc1" path="res://scenes/ui/inventory_shop/shop_inventory_item_hover_tip.tscn" id="8_lrgj7"]
+
+[node name="GameScreen1" type="CanvasLayer" unique_id=1672369374]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=238668882]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fidqs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1024671308]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="EmotesPanel" parent="MarginContainer/VBoxContainer" unique_id=67070326 instance=ExtResource("2_4xsby")]
+layout_mode = 2
+
+[node name="InventoryGrid" parent="MarginContainer/VBoxContainer" unique_id=70194386 instance=ExtResource("3_fidqs")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="ToolsPanel" parent="MarginContainer" unique_id=1225691053 instance=ExtResource("4_fidqs")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="DayAndNightPanel" parent="MarginContainer" unique_id=1759858146 instance=ExtResource("5_ggo0w")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="ShopGrid" parent="MarginContainer" unique_id=2116003971 instance=ExtResource("7_q7fx3")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="PlayerEquipmentPanel" parent="." unique_id=1594673512 instance=ExtResource("7_ggo0w")]
+visible = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -123.0
+offset_right = 0.0
+offset_bottom = 83.0
+grow_horizontal = 0
+
+[node name="InventoryItemHoverTip" parent="." unique_id=1540537942 instance=ExtResource("6_4xsby")]
+
+[node name="ShopInventoryItemHoverTip" parent="." unique_id=220724918 instance=ExtResource("8_lrgj7")]

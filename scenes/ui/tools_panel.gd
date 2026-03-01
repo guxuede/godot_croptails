@@ -42,7 +42,7 @@ func _on_tool_corn_pressed() -> void:
 
 func _on_tool_tomato_pressed() -> void:
 	ToolManager.selecte_tool(DatTypes.Tools.PlantTomato)
-	
+
 	
 	
 func _unhandled_input(event: InputEvent) -> void:

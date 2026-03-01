@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://60ds6sereguv"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_as803"]
+
+[sub_resource type="Resource" id="Resource_as803"]
+resource_name = "max_strength"
+script = ExtResource("1_as803")
+id = "max_strength"
+base_value = 10.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_awech"]
+resource_name = "min_strength"
+script = ExtResource("1_as803")
+id = "min_strength"
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[resource]
+resource_name = "strength"
+script = ExtResource("1_as803")
+id = "strength"
+base_value = 5.0
+min_stat = SubResource("Resource_awech")
+max_stat = SubResource("Resource_as803")
+metadata/_custom_type_script = "uid://i86wxxykecvr"

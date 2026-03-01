@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://btfd0gjhu0ibc"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_q6do5"]
+
+[sub_resource type="Resource" id="Resource_q6do5"]
+resource_name = "max_defense"
+script = ExtResource("1_q6do5")
+id = "max_defense"
+base_value = 10.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_arnp1"]
+resource_name = "min_defense"
+script = ExtResource("1_q6do5")
+id = "min_defense"
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[resource]
+resource_name = "defense"
+script = ExtResource("1_q6do5")
+id = "defense"
+base_value = 5.0
+min_stat = SubResource("Resource_arnp1")
+max_stat = SubResource("Resource_q6do5")
+metadata/_custom_type_script = "uid://i86wxxykecvr"

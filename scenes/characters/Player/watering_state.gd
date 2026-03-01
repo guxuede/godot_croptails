@@ -8,11 +8,6 @@ func _ready() -> void:
 	hit_compoment_collision_shape.disabled = true
 	hit_compoment_collision_shape.position = Vector2.ZERO
 
-
-func on_process(_delta : float):
-	pass
-
-
 func on_physics_process(_delta : float):
 	if !animated_sprite_2d.is_playing():
 		transition.emit("Idle")

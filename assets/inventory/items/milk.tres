@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://b8ug55cj88qe"]
+
+[ext_resource type="Texture2D" uid="uid://4v7lbu4vx6si" path="res://assets/game/objects/simple_milk_and_grass_item.png" id="1_iqkn1"]
+
+[resource]
+atlas = ExtResource("1_iqkn1")
+region = Rect2(34, 1, 12, 15)

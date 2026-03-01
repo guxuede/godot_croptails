@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b2nvjln3e7m3w"]
+
+[ext_resource type="Script" uid="uid://cvj8pogsewci3" path="res://addons/antipixel_stats/scripts/script_stat_label.gd" id="1_g8pt3"]
+[ext_resource type="Script" uid="uid://b4lqpfcsxqps0" path="res://scenes/ui/playstats/script_stat_control.gd" id="1_lawku"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="2_fwauh"]
+
+[node name="StatControl" type="HBoxContainer" unique_id=553860354 node_paths=PackedStringArray("name_label", "stat_label")]
+script = ExtResource("1_lawku")
+name_label = NodePath("NameLabel")
+stat_label = NodePath("StatLabel")
+
+[node name="NameLabel" type="Label" parent="." unique_id=939807229]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_fwauh")
+theme_override_font_sizes/font_size = 8
+
+[node name="StatLabel" type="Label" parent="." unique_id=1057006169]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_fwauh")
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("1_g8pt3")

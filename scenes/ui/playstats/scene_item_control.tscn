@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b3e8xt3ojtq86"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vruvl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vc5mi"]
+bg_color = Color(0.32, 0.388, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40jr6"]
+bg_color = Color(0.42, 0.574667, 1, 0.392157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_000mg"]
+
+[sub_resource type="GDScript" id="GDScript_p43ut"]
+script/source = "@tool
+extends Button
+
+@export_group(\"Parameters\")
+@export var name_text: String:
+	set(value): name_text = value; update()
+@export var mod_text: String:
+	set(value): mod_text = value; update()
+@export var expressions: Array[StatExpression]
+
+@export_group(\"References\")
+@export var name_label: Label:
+	set(value): name_label = value; update()
+@export var mod_label: Label:
+	set(value): mod_label = value; update()
+
+var mods: Array[StatModifier]
+
+func _ready() -> void:
+	for expression: StatExpression in expressions:
+		mods.append(expression.get_mod(self))
+
+func _toggled(toggled_on: bool) -> void:
+	match toggled_on:
+		true:
+			for i: int in expressions.size():
+				expressions[i].stat.add_mod(mods[i])
+		false:
+			for i: int in expressions.size():
+				expressions[i].stat.remove_mod(mods[i])
+
+func update() -> void:
+	if name_label: name_label.text = name_text
+	if mod_label: mod_label.text = mod_text
+"
+
+[node name="ItemControl" type="Button" unique_id=1660291195 node_paths=PackedStringArray("name_label", "mod_label")]
+custom_minimum_size = Vector2(25, 34)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vruvl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vc5mi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_40jr6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_000mg")
+toggle_mode = true
+script = SubResource("GDScript_p43ut")
+name_label = NodePath("MarginContainer/HBoxContainer/NameLabel")
+mod_label = NodePath("MarginContainer/HBoxContainer/ModLabel")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1519240512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1391714576]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1752523978]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+
+[node name="ModLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=29060468]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 2

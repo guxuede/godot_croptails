@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://d1k1sy8c84bqe"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats_system/scripts/script_stat.gd" id="1_g032l"]
+
+[resource]
+resource_name = "armor"
+script = ExtResource("1_g032l")
+id = "armor"
+base_value = 25.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"

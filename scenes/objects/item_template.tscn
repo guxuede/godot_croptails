@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bc80i3xdibst4"]
+
+[ext_resource type="Texture2D" uid="uid://bry18kyu8rf77" path="res://assets/inventory/items/egg.tres" id="1_bx5u0"]
+[ext_resource type="PackedScene" uid="uid://bsmgeoeja02lo" path="res://scenes/compoments/collectable_componment.tscn" id="2_l6tle"]
+[ext_resource type="Script" uid="uid://bqqralr056oop" path="res://scenes/objects/item_template.gd" id="2_x2w2r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxl7r"]
+radius = 8.0
+
+[node name="ItemTemplate" type="Sprite2D" unique_id=1844393392]
+editor_description = "this is just a template"
+texture = ExtResource("1_bx5u0")
+script = ExtResource("2_x2w2r")
+
+[node name="CollectableComponment" parent="." unique_id=1170512856 instance=ExtResource("2_l6tle")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponment" unique_id=1310479036]
+shape = SubResource("CircleShape2D_kxl7r")

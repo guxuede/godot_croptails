@@ -1,0 +1,338 @@
+[gd_scene format=3 uid="uid://dby83dw8j507g"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_2qrbf"]
+[ext_resource type="Script" uid="uid://bnbikxwivrnjs" path="res://scenes/ui/playstats/player_equipment_panel.gd" id="2_vh6vv"]
+[ext_resource type="FontVariation" uid="uid://ifuaiodn04dj" path="res://assets/ui/fonts/zx_palm_variation.tres" id="3_1f4f7"]
+[ext_resource type="PackedScene" uid="uid://c3eniffhm8p1l" path="res://scenes/ui/playstats/equipment_slot.tscn" id="3_fjeno"]
+[ext_resource type="Texture2D" uid="uid://b05b727d1umhc" path="res://assets/game/characters/basic_charakter_spritesheet.png" id="6_qxo4u"]
+[ext_resource type="PackedScene" uid="uid://c5ubqa1yvekcr" path="res://scenes/ui/playstats/scene_attribute_control.tscn" id="7_yjm5d"]
+[ext_resource type="Script" uid="uid://chp0mha645vnh" path="res://addons/antipixel_stats/scripts/script_stat_expression.gd" id="8_53qy0"]
+[ext_resource type="Resource" uid="uid://dtdm6vv3h420e" path="res://data/stats/stats/stat_wateting_damage.tres" id="8_cws18"]
+[ext_resource type="Resource" uid="uid://60ds6sereguv" path="res://data/stats/stats/attributes/stat_strength_attribute.tres" id="9_605eh"]
+[ext_resource type="Resource" uid="uid://cyw7pl55r7ikp" path="res://data/stats/stats/stat_physical_damage.tres" id="10_vdgwv"]
+[ext_resource type="Resource" uid="uid://gagxdth4hk3l" path="res://data/stats/stats/stat_critic_damage.tres" id="11_tjxvy"]
+[ext_resource type="Resource" uid="uid://cktqdtm18181x" path="res://data/stats/stats/attributes/stat_intelligence_attribute.tres" id="12_ch8h3"]
+[ext_resource type="Resource" uid="uid://dpn7y58tnsguk" path="res://data/stats/stats/stat_magic_damage.tres" id="13_5cltm"]
+[ext_resource type="Resource" uid="uid://hcwmbpe5608j" path="res://data/stats/stats/stat_mana.tres" id="14_pwbpf"]
+[ext_resource type="Resource" uid="uid://21qr78ymsmgs" path="res://data/stats/stats/attributes/stat_dexterity_attribute.tres" id="15_345go"]
+[ext_resource type="Resource" uid="uid://cvmxc75jl23f1" path="res://data/stats/stats/stat_attack_speed.tres" id="16_fooqg"]
+[ext_resource type="Resource" uid="uid://31m7x4ghsn1h" path="res://data/stats/stats/stat_critic_chance.tres" id="17_mibap"]
+[ext_resource type="Resource" uid="uid://btfd0gjhu0ibc" path="res://data/stats/stats/attributes/stat_defense_attribute.tres" id="18_wkahe"]
+[ext_resource type="Resource" uid="uid://hyewimsxjncd" path="res://data/stats/stats/stat_health.tres" id="19_381kt"]
+[ext_resource type="Resource" uid="uid://d1k1sy8c84bqe" path="res://data/stats/stats/stat_armor.tres" id="20_vhed6"]
+[ext_resource type="Resource" uid="uid://dgruerre0hgof" path="res://data/stats/stats/attributes/stat_speed_attribute.tres" id="21_x8nqx"]
+[ext_resource type="Resource" uid="uid://dhwl4sgrl6ti1" path="res://data/stats/stats/stat_movement_speed.tres" id="22_k03yu"]
+[ext_resource type="PackedScene" uid="uid://b2nvjln3e7m3w" path="res://scenes/ui/playstats/scene_stat_control.tscn" id="27_8ht87"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qgxc"]
+atlas = ExtResource("6_qxo4u")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="Resource" id="Resource_tww45"]
+resource_name = "strength"
+script = ExtResource("8_53qy0")
+id = "strength"
+stat = ExtResource("9_605eh")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_vtag3"]
+resource_name = "physical_damage"
+script = ExtResource("8_53qy0")
+id = "physical_damage"
+stat = ExtResource("10_vdgwv")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_ntcob"]
+resource_name = "critic_damage"
+script = ExtResource("8_53qy0")
+id = "critic_damage"
+stat = ExtResource("11_tjxvy")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_lghxx"]
+resource_name = "intelligence"
+script = ExtResource("8_53qy0")
+id = "intelligence"
+stat = ExtResource("12_ch8h3")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_y2u71"]
+resource_name = "magic_damage"
+script = ExtResource("8_53qy0")
+id = "magic_damage"
+stat = ExtResource("13_5cltm")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_0ogxu"]
+resource_name = "mana"
+script = ExtResource("8_53qy0")
+id = "mana"
+stat = ExtResource("14_pwbpf")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_u8bcm"]
+resource_name = "dexterity"
+script = ExtResource("8_53qy0")
+id = "dexterity"
+stat = ExtResource("15_345go")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_dgill"]
+resource_name = "attack_speed"
+script = ExtResource("8_53qy0")
+id = "attack_speed"
+stat = ExtResource("16_fooqg")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_p6xg0"]
+resource_name = "critic_chance"
+script = ExtResource("8_53qy0")
+id = "critic_chance"
+stat = ExtResource("17_mibap")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_lh5lq"]
+resource_name = "defense"
+script = ExtResource("8_53qy0")
+id = "defense"
+stat = ExtResource("18_wkahe")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_wd51j"]
+resource_name = "health"
+script = ExtResource("8_53qy0")
+id = "health"
+stat = ExtResource("19_381kt")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_ylbw6"]
+resource_name = "armor"
+script = ExtResource("8_53qy0")
+id = "armor"
+stat = ExtResource("20_vhed6")
+value = 5.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_nhj77"]
+resource_name = "speed"
+script = ExtResource("8_53qy0")
+id = "speed"
+stat = ExtResource("21_x8nqx")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_xn2ie"]
+resource_name = "movement_speed"
+script = ExtResource("8_53qy0")
+id = "movement_speed"
+stat = ExtResource("22_k03yu")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[node name="PlayerEquipmentPanel" type="PanelContainer" unique_id=1225691053]
+offset_right = 237.0
+offset_bottom = 244.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_2qrbf")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_vh6vv")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=351967205]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=398212943]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1170835960]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_1f4f7")
+text = "Enquipment"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=489522784]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1505437358]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=418933334]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1693031460]
+layout_mode = 2
+
+[node name="EquipmentSlot" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1683180174 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot2" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=256495585 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot3" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1559096512 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=524030947]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1933081179]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/MarginContainer" unique_id=507738752]
+layout_mode = 2
+texture = SubResource("AtlasTexture_2qgxc")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1199805609]
+layout_mode = 2
+
+[node name="EquipmentSlot" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1392881403 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot2" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1221650646 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot3" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=2078876091 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=2047812928]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="EquipmentSlot" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2060638270 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot2" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=791394346 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="EquipmentSlot3" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=118494883 instance=ExtResource("3_fjeno")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=432935637]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3" unique_id=1737282027]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="ATTRIBUTES" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1427475965]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Strength" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/ATTRIBUTES" unique_id=1746184534 instance=ExtResource("7_yjm5d")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_tww45")
+stat_expresions = Array[ExtResource("8_53qy0")]([SubResource("Resource_vtag3"), SubResource("Resource_ntcob")])
+name_text = "Strength"
+stat = ExtResource("9_605eh")
+
+[node name="Intelligence" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/ATTRIBUTES" unique_id=96246278 instance=ExtResource("7_yjm5d")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_lghxx")
+stat_expresions = Array[ExtResource("8_53qy0")]([SubResource("Resource_y2u71"), SubResource("Resource_0ogxu")])
+name_text = "Intelligence"
+stat = ExtResource("12_ch8h3")
+
+[node name="Dexterity" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/ATTRIBUTES" unique_id=325253875 instance=ExtResource("7_yjm5d")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_u8bcm")
+stat_expresions = Array[ExtResource("8_53qy0")]([SubResource("Resource_dgill"), SubResource("Resource_p6xg0")])
+name_text = "Dexterity"
+stat = ExtResource("15_345go")
+
+[node name="Defense" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/ATTRIBUTES" unique_id=2021757534 instance=ExtResource("7_yjm5d")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_lh5lq")
+stat_expresions = Array[ExtResource("8_53qy0")]([SubResource("Resource_wd51j"), SubResource("Resource_ylbw6")])
+name_text = "Defense"
+stat = ExtResource("18_wkahe")
+
+[node name="Speed" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer/ATTRIBUTES" unique_id=1685696689 instance=ExtResource("7_yjm5d")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_nhj77")
+stat_expresions = Array[ExtResource("8_53qy0")]([SubResource("Resource_xn2ie")])
+name_text = "Speed"
+stat = ExtResource("21_x8nqx")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3" unique_id=940297189]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="STATS" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2" unique_id=31857666]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Health" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=553860354 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Health"
+stat = ExtResource("19_381kt")
+
+[node name="Mana" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1985004237 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Mana"
+stat = ExtResource("14_pwbpf")
+
+[node name="Armor" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=678429759 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Armor"
+stat = ExtResource("20_vhed6")
+
+[node name="PhysicalDamage" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1049018037 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Physical Damage"
+stat = ExtResource("10_vdgwv")
+
+[node name="MagicDamage" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1497284666 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Magic Damage"
+stat = ExtResource("13_5cltm")
+
+[node name="AttackSpeed" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1320936601 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Attack Speed"
+stat = ExtResource("16_fooqg")
+
+[node name="MovementSpeed" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=768429177 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Movement Speed"
+stat = ExtResource("22_k03yu")
+
+[node name="CriticDamage" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=538360598 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Critic Damage"
+stat = ExtResource("11_tjxvy")
+suffix = "%"
+is_percentage = true
+
+[node name="CriticChance" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1642314628 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Critic Chance"
+stat = ExtResource("17_mibap")
+suffix = "%"
+is_percentage = true
+
+[node name="Watering Damage" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer3/HBoxContainer2/STATS" unique_id=1850612338 instance=ExtResource("27_8ht87")]
+layout_mode = 2
+name_text = "Watering Damage"
+stat = ExtResource("8_cws18")

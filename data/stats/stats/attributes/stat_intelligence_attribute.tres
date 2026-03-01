@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://cktqdtm18181x"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_l2jhu"]
+
+[sub_resource type="Resource" id="Resource_l2jhu"]
+resource_name = "max_intelligence"
+script = ExtResource("1_l2jhu")
+id = "max_intelligence"
+base_value = 10.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_ot3bq"]
+resource_name = "min_intelligence"
+script = ExtResource("1_l2jhu")
+id = "min_intelligence"
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[resource]
+resource_name = "intelligence"
+script = ExtResource("1_l2jhu")
+id = "intelligence"
+base_value = 5.0
+min_stat = SubResource("Resource_ot3bq")
+max_stat = SubResource("Resource_l2jhu")
+metadata/_custom_type_script = "uid://i86wxxykecvr"

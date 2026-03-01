@@ -1,0 +1,600 @@
+[gd_scene format=3 uid="uid://ddkx70x48kg0"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="2_v0ty2"]
+[ext_resource type="Script" uid="uid://cfaw640egt0eq" path="res://addons/antipixel_stats/scripts/radar_chart/script_polyline_radar_chart.gd" id="3_3p3vg"]
+[ext_resource type="Script" uid="uid://cipiwqdveug4v" path="res://addons/antipixel_stats/scripts/radar_chart/script_radar_chart.gd" id="3_ehdac"]
+[ext_resource type="Script" uid="uid://dj3erwxdvbfut" path="res://scenes/ui/playstats/script_custom_radar_chart.gd" id="3_p0vnh"]
+[ext_resource type="Resource" uid="uid://btfd0gjhu0ibc" path="res://data/stats/stats/attributes/stat_defense_attribute.tres" id="4_qkjep"]
+[ext_resource type="Resource" uid="uid://21qr78ymsmgs" path="res://data/stats/stats/attributes/stat_dexterity_attribute.tres" id="5_xlv72"]
+[ext_resource type="Resource" uid="uid://cktqdtm18181x" path="res://data/stats/stats/attributes/stat_intelligence_attribute.tres" id="6_bsbmr"]
+[ext_resource type="Resource" uid="uid://dgruerre0hgof" path="res://data/stats/stats/attributes/stat_speed_attribute.tres" id="7_j1r1k"]
+[ext_resource type="PackedScene" uid="uid://c5ubqa1yvekcr" path="res://scenes/ui/playstats/scene_attribute_control.tscn" id="8_j1r1k"]
+[ext_resource type="Resource" uid="uid://60ds6sereguv" path="res://data/stats/stats/attributes/stat_strength_attribute.tres" id="8_x7260"]
+[ext_resource type="Script" uid="uid://chp0mha645vnh" path="res://addons/antipixel_stats/scripts/script_stat_expression.gd" id="9_x7260"]
+[ext_resource type="PackedScene" uid="uid://b2nvjln3e7m3w" path="res://scenes/ui/playstats/scene_stat_control.tscn" id="12_bsbmr"]
+[ext_resource type="Resource" uid="uid://hyewimsxjncd" path="res://data/stats/stats/stat_health.tres" id="14_7801o"]
+[ext_resource type="Resource" uid="uid://hcwmbpe5608j" path="res://data/stats/stats/stat_mana.tres" id="15_smcg0"]
+[ext_resource type="Resource" uid="uid://d1k1sy8c84bqe" path="res://data/stats/stats/stat_armor.tres" id="16_8kido"]
+[ext_resource type="Resource" uid="uid://cyw7pl55r7ikp" path="res://data/stats/stats/stat_physical_damage.tres" id="17_mo8ff"]
+[ext_resource type="Resource" uid="uid://dpn7y58tnsguk" path="res://data/stats/stats/stat_magic_damage.tres" id="18_cdwcw"]
+[ext_resource type="Resource" uid="uid://cvmxc75jl23f1" path="res://data/stats/stats/stat_attack_speed.tres" id="19_6bmsr"]
+[ext_resource type="Resource" uid="uid://dhwl4sgrl6ti1" path="res://data/stats/stats/stat_movement_speed.tres" id="20_jk4tn"]
+[ext_resource type="Resource" uid="uid://gagxdth4hk3l" path="res://data/stats/stats/stat_critic_damage.tres" id="21_rkwj4"]
+[ext_resource type="Resource" uid="uid://31m7x4ghsn1h" path="res://data/stats/stats/stat_critic_chance.tres" id="22_6ko7c"]
+[ext_resource type="PackedScene" uid="uid://b3e8xt3ojtq86" path="res://scenes/ui/playstats/scene_item_control.tscn" id="23_7801o"]
+
+[sub_resource type="Resource" id="Resource_opky1"]
+resource_name = "strength"
+script = ExtResource("9_x7260")
+id = "strength"
+stat = ExtResource("8_x7260")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_vtag3"]
+resource_name = "physical_damage"
+script = ExtResource("9_x7260")
+id = "physical_damage"
+stat = ExtResource("17_mo8ff")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_ntcob"]
+resource_name = "critic_damage"
+script = ExtResource("9_x7260")
+id = "critic_damage"
+stat = ExtResource("21_rkwj4")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_x7260"]
+resource_name = "intelligence"
+script = ExtResource("9_x7260")
+id = "intelligence"
+stat = ExtResource("6_bsbmr")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_y2u71"]
+resource_name = "magic_damage"
+script = ExtResource("9_x7260")
+id = "magic_damage"
+stat = ExtResource("18_cdwcw")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_0ogxu"]
+resource_name = "mana"
+script = ExtResource("9_x7260")
+id = "mana"
+stat = ExtResource("15_smcg0")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_ojs88"]
+resource_name = "dexterity"
+script = ExtResource("9_x7260")
+id = "dexterity"
+stat = ExtResource("5_xlv72")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_dgill"]
+resource_name = "attack_speed"
+script = ExtResource("9_x7260")
+id = "attack_speed"
+stat = ExtResource("19_6bmsr")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_p6xg0"]
+resource_name = "critic_chance"
+script = ExtResource("9_x7260")
+id = "critic_chance"
+stat = ExtResource("22_6ko7c")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_funf5"]
+resource_name = "defense"
+script = ExtResource("9_x7260")
+id = "defense"
+stat = ExtResource("4_qkjep")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_wd51j"]
+resource_name = "health"
+script = ExtResource("9_x7260")
+id = "health"
+stat = ExtResource("14_7801o")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_ylbw6"]
+resource_name = "armor"
+script = ExtResource("9_x7260")
+id = "armor"
+stat = ExtResource("16_8kido")
+value = 5.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_lbtvo"]
+resource_name = "speed"
+script = ExtResource("9_x7260")
+id = "speed"
+stat = ExtResource("7_j1r1k")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_xn2ie"]
+resource_name = "movement_speed"
+script = ExtResource("9_x7260")
+id = "movement_speed"
+stat = ExtResource("20_jk4tn")
+value = 0.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_7801o"]
+resource_name = "physical_damage"
+script = ExtResource("9_x7260")
+id = "physical_damage"
+stat = ExtResource("17_mo8ff")
+value = 50.0
+priority = 1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_8smpt"]
+resource_name = "speed"
+script = ExtResource("9_x7260")
+id = "speed"
+stat = ExtResource("7_j1r1k")
+value = 1.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_smcg0"]
+resource_name = "magic_damage"
+script = ExtResource("9_x7260")
+id = "magic_damage"
+stat = ExtResource("18_cdwcw")
+value = 50.0
+priority = 1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_8kido"]
+resource_name = "attack_speed"
+script = ExtResource("9_x7260")
+id = "attack_speed"
+stat = ExtResource("19_6bmsr")
+operation = 2
+value = 1.25
+priority = 1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_mo8ff"]
+resource_name = "movement_speed"
+script = ExtResource("9_x7260")
+id = "movement_speed"
+stat = ExtResource("20_jk4tn")
+operation = 2
+value = 1.3
+priority = 1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_cdwcw"]
+resource_name = "armor"
+script = ExtResource("9_x7260")
+id = "armor"
+stat = ExtResource("16_8kido")
+value = 40.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_6bmsr"]
+resource_name = "health"
+script = ExtResource("9_x7260")
+id = "health"
+stat = ExtResource("14_7801o")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_jk4tn"]
+resource_name = "mana"
+script = ExtResource("9_x7260")
+id = "mana"
+stat = ExtResource("15_smcg0")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_rkwj4"]
+resource_name = "armor"
+script = ExtResource("9_x7260")
+id = "armor"
+stat = ExtResource("16_8kido")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_6ko7c"]
+resource_name = "physical_damage"
+script = ExtResource("9_x7260")
+id = "physical_damage"
+stat = ExtResource("17_mo8ff")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_d7wph"]
+resource_name = "magic_damage"
+script = ExtResource("9_x7260")
+id = "magic_damage"
+stat = ExtResource("18_cdwcw")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_yspgm"]
+resource_name = "attack_speed"
+script = ExtResource("9_x7260")
+id = "attack_speed"
+stat = ExtResource("19_6bmsr")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_a63f5"]
+resource_name = "movement_speed"
+script = ExtResource("9_x7260")
+id = "movement_speed"
+stat = ExtResource("20_jk4tn")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_jrwfh"]
+resource_name = "critic_damage"
+script = ExtResource("9_x7260")
+id = "critic_damage"
+stat = ExtResource("21_rkwj4")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[sub_resource type="Resource" id="Resource_6glib"]
+resource_name = "critic_chance"
+script = ExtResource("9_x7260")
+id = "critic_chance"
+stat = ExtResource("22_6ko7c")
+operation = 2
+value = 1.1
+metadata/_custom_type_script = "uid://chp0mha645vnh"
+
+[node name="StatsSystemExample" type="CanvasLayer" unique_id=875734675]
+
+[node name="BACKGROUND" type="ColorRect" parent="." unique_id=1964227247]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0941176, 0.12549, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1551144040]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=703162494]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1183915955]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ATTRIBUTES" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2136927396]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Strength" parent="MarginContainer/VBoxContainer/HBoxContainer/ATTRIBUTES" unique_id=1313073865 instance=ExtResource("8_j1r1k")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_opky1")
+stat_expresions = Array[ExtResource("9_x7260")]([SubResource("Resource_vtag3"), SubResource("Resource_ntcob")])
+name_text = "Strength"
+stat = ExtResource("8_x7260")
+
+[node name="Intelligence" parent="MarginContainer/VBoxContainer/HBoxContainer/ATTRIBUTES" unique_id=133066528 instance=ExtResource("8_j1r1k")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_x7260")
+stat_expresions = Array[ExtResource("9_x7260")]([SubResource("Resource_y2u71"), SubResource("Resource_0ogxu")])
+name_text = "Intelligence"
+stat = ExtResource("6_bsbmr")
+
+[node name="Dexterity" parent="MarginContainer/VBoxContainer/HBoxContainer/ATTRIBUTES" unique_id=1960361957 instance=ExtResource("8_j1r1k")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_ojs88")
+stat_expresions = Array[ExtResource("9_x7260")]([SubResource("Resource_dgill"), SubResource("Resource_p6xg0")])
+name_text = "Dexterity"
+stat = ExtResource("5_xlv72")
+
+[node name="Defense" parent="MarginContainer/VBoxContainer/HBoxContainer/ATTRIBUTES" unique_id=791006095 instance=ExtResource("8_j1r1k")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_funf5")
+stat_expresions = Array[ExtResource("9_x7260")]([SubResource("Resource_wd51j"), SubResource("Resource_ylbw6")])
+name_text = "Defense"
+stat = ExtResource("4_qkjep")
+
+[node name="Speed" parent="MarginContainer/VBoxContainer/HBoxContainer/ATTRIBUTES" unique_id=528306613 instance=ExtResource("8_j1r1k")]
+layout_mode = 2
+attribute_expression = SubResource("Resource_lbtvo")
+stat_expresions = Array[ExtResource("9_x7260")]([SubResource("Resource_xn2ie")])
+name_text = "Speed"
+stat = ExtResource("7_j1r1k")
+
+[node name="RADAR_CHART" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1908479027 node_paths=PackedStringArray("charts")]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_p0vnh")
+stats = Array[ExtResource("2_v0ty2")]([ExtResource("8_x7260"), ExtResource("6_bsbmr"), ExtResource("4_qkjep"), ExtResource("7_j1r1k"), ExtResource("5_xlv72")])
+charts = [NodePath("MarginContainer/PolylineRadarChart/PolylineRadarChart2/RadarChart"), NodePath("MarginContainer/PolylineRadarChart/PolylineRadarChart2/RadarChart/PolylineRadarChart")]
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=1085243861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PolylineRadarChart" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART/MarginContainer" unique_id=887967445]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_3p3vg")
+width = 5
+antialiased = true
+data = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0])
+color = Color(1, 1, 1, 0.501961)
+metadata/_custom_type_script = "uid://cfaw640egt0eq"
+
+[node name="PolylineRadarChart2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART/MarginContainer/PolylineRadarChart" unique_id=653244185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("3_3p3vg")
+width = 5
+antialiased = true
+data = Array[float]([0.5, 0.5, 0.5, 0.5, 0.5])
+color = Color(1, 1, 1, 0.501961)
+metadata/_custom_type_script = "uid://cfaw640egt0eq"
+
+[node name="RadarChart" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART/MarginContainer/PolylineRadarChart/PolylineRadarChart2" unique_id=725786975]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("3_ehdac")
+data = Array[float]([0.5, 0.5, 0.5, 0.5, 0.5])
+color = Color(0.317647, 0.388235, 1, 0.901961)
+metadata/_custom_type_script = "uid://cipiwqdveug4v"
+
+[node name="PolylineRadarChart" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART/MarginContainer/PolylineRadarChart/PolylineRadarChart2/RadarChart" unique_id=1747678217]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_3p3vg")
+width = 5
+antialiased = true
+data = Array[float]([0.5, 0.5, 0.5, 0.5, 0.5])
+color = Color(0.39, 0.573, 1, 1)
+metadata/_custom_type_script = "uid://cfaw640egt0eq"
+
+[node name="StrengthLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=1946103962]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Strength"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DexterityLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=7217916]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -52.0
+offset_right = -96.5
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Dexterity"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="IntelligenceLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=1493531456]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 93.0
+offset_top = -52.0
+offset_right = 227.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Intelligence"
+vertical_alignment = 1
+
+[node name="SpeedLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=470114035]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -133.5
+offset_top = -48.0
+offset_right = -66.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Speed"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DefenseLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/RADAR_CHART" unique_id=1862566277]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 66.5
+offset_top = -48.0
+offset_right = 133.5
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=995855543]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="STATS" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=763921612]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Health" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=2028151330 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Health"
+stat = ExtResource("14_7801o")
+
+[node name="Mana" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=767384834 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Mana"
+stat = ExtResource("15_smcg0")
+
+[node name="Armor" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=1272393688 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Armor"
+stat = ExtResource("16_8kido")
+
+[node name="PhysicalDamage" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=375725701 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Physical Damage"
+stat = ExtResource("17_mo8ff")
+
+[node name="MagicDamage" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=841210439 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Magic Damage"
+stat = ExtResource("18_cdwcw")
+
+[node name="AttackSpeed" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=1158633386 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Attack Speed"
+stat = ExtResource("19_6bmsr")
+
+[node name="MovementSpeed" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=948388398 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Movement Speed"
+stat = ExtResource("20_jk4tn")
+
+[node name="CriticDamage" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=237705052 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Critic Damage"
+stat = ExtResource("21_rkwj4")
+suffix = "%"
+is_percentage = true
+
+[node name="CriticChance" parent="MarginContainer/VBoxContainer/HBoxContainer2/STATS" unique_id=290376752 instance=ExtResource("12_bsbmr")]
+layout_mode = 2
+name_text = "Critic Chance"
+stat = ExtResource("22_6ko7c")
+suffix = "%"
+is_percentage = true
+
+[node name="ITEMS" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1747269827]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS" unique_id=1554954076]
+layout_mode = 2
+alignment = 1
+
+[node name="Sword" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=1900096616 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Sword"
+mod_text = "+50 Physical Damage"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_7801o"), SubResource("Resource_8smpt")])
+
+[node name="Staff" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=693951165 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Staff"
+mod_text = "+50 Magic Damage"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_smcg0")])
+
+[node name="Bow" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=452679236 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Bow"
+mod_text = "+25% Attack Speed"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_8kido")])
+
+[node name="Boots" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=1557294922 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Boots"
+mod_text = "+30% Movement Speed"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_mo8ff")])
+
+[node name="Shield" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=332487268 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Shield"
+mod_text = "+40 Armor"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_cdwcw")])
+
+[node name="Ring" parent="MarginContainer/VBoxContainer/HBoxContainer2/ITEMS/VBoxContainer" unique_id=735879430 instance=ExtResource("23_7801o")]
+layout_mode = 2
+name_text = "Ring"
+mod_text = "+10% All Stats"
+expressions = Array[ExtResource("9_x7260")]([SubResource("Resource_6bmsr"), SubResource("Resource_jk4tn"), SubResource("Resource_rkwj4"), SubResource("Resource_6ko7c"), SubResource("Resource_d7wph"), SubResource("Resource_yspgm"), SubResource("Resource_a63f5"), SubResource("Resource_jrwfh"), SubResource("Resource_6glib")])

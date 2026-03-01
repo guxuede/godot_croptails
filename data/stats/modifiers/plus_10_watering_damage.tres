@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="StatExpression" format=3 uid="uid://x2ji6xwc541u"]
+
+[ext_resource type="Script" uid="uid://chp0mha645vnh" path="res://addons/antipixel_stats/scripts/script_stat_expression.gd" id="1_w2sp1"]
+[ext_resource type="Resource" uid="uid://dtdm6vv3h420e" path="res://data/stats/stats/stat_wateting_damage.tres" id="2_ma315"]
+
+[resource]
+resource_name = "plus_10_watering_damage"
+script = ExtResource("1_w2sp1")
+id = "plus_10_watering_damage"
+stat = ExtResource("2_ma315")
+value = 10.0
+metadata/_custom_type_script = "uid://chp0mha645vnh"

@@ -1,24 +1,12 @@
 extends Node
 
-var inventory: Dictionary = Dictionary()
-
 signal inventory_changed
+signal inventory_item_collected(collectable_name: String, stack_size: int)
 
-func add_collectable(collectable_name: String) -> void:
-	inventory.get_or_add(collectable_name)
-	if inventory[collectable_name] == null:
-		inventory[collectable_name] = 1
-	else:
-		inventory[collectable_name] += 1
-		
-	inventory_changed.emit()
+var moneny: int = 0
 
-
-func remve_collectable(collectable_name: String) -> void:
-	if inventory[collectable_name] == null:
-		inventory[collectable_name] = 0
-	else:
-		if inventory[collectable_name] > 0:
-			inventory[collectable_name] -= 1
-
+func add_collectable(collectable_name: String, stack_size: int = 1) -> void:
+	if collectable_name == "moneny":
+		moneny += stack_size
+	inventory_item_collected.emit(collectable_name, stack_size)
 	inventory_changed.emit()

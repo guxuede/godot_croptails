@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://21qr78ymsmgs"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_tf5jp"]
+
+[sub_resource type="Resource" id="Resource_tf5jp"]
+resource_name = "max_dexterity"
+script = ExtResource("1_tf5jp")
+id = "max_dexterity"
+base_value = 10.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_d0nop"]
+resource_name = "min_dexterity"
+script = ExtResource("1_tf5jp")
+id = "min_dexterity"
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[resource]
+resource_name = "dexterity"
+script = ExtResource("1_tf5jp")
+id = "dexterity"
+base_value = 5.0
+min_stat = SubResource("Resource_d0nop")
+max_stat = SubResource("Resource_tf5jp")
+metadata/_custom_type_script = "uid://i86wxxykecvr"

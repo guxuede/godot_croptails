@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bx3wtg0cy25gr"]
+
+[ext_resource type="Script" uid="uid://dd1hxudtcmdgk" path="res://data/stats/characters_stats.gd" id="1_1kcis"]
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="2_cf548"]
+[ext_resource type="Resource" uid="uid://dtdm6vv3h420e" path="res://data/stats/stats/stat_wateting_damage.tres" id="12_8oliw"]
+[ext_resource type="Resource" uid="uid://btfd0gjhu0ibc" path="res://data/stats/stats/attributes/stat_defense_attribute.tres" id="13_stldg"]
+[ext_resource type="Resource" uid="uid://21qr78ymsmgs" path="res://data/stats/stats/attributes/stat_dexterity_attribute.tres" id="14_lhvxb"]
+[ext_resource type="Resource" uid="uid://cktqdtm18181x" path="res://data/stats/stats/attributes/stat_intelligence_attribute.tres" id="15_mqna0"]
+[ext_resource type="Resource" uid="uid://dgruerre0hgof" path="res://data/stats/stats/attributes/stat_speed_attribute.tres" id="16_d8bbn"]
+[ext_resource type="Resource" uid="uid://60ds6sereguv" path="res://data/stats/stats/attributes/stat_strength_attribute.tres" id="17_3xvq1"]
+
+[sub_resource type="Resource" id="Resource_qwla3"]
+resource_name = "armor"
+script = ExtResource("2_cf548")
+id = "armor"
+base_value = 25.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_d565g"]
+resource_name = "attack_speed"
+script = ExtResource("2_cf548")
+id = "attack_speed"
+base_value = 1.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_1p1bf"]
+resource_name = "critic_chance"
+script = ExtResource("2_cf548")
+id = "critic_chance"
+base_value = 0.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_m55ce"]
+resource_name = "critic_damage"
+script = ExtResource("2_cf548")
+id = "critic_damage"
+base_value = 1.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_gft0l"]
+resource_name = "health"
+script = ExtResource("2_cf548")
+id = "health"
+base_value = 150.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_6jfme"]
+resource_name = "magic_damage"
+script = ExtResource("2_cf548")
+id = "magic_damage"
+base_value = 60.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_gj11t"]
+resource_name = "mana"
+script = ExtResource("2_cf548")
+id = "mana"
+base_value = 150.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_xo6av"]
+resource_name = "movement_speed"
+script = ExtResource("2_cf548")
+id = "movement_speed"
+base_value = 1.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_lcbno"]
+resource_name = "physical_damage"
+script = ExtResource("2_cf548")
+id = "physical_damage"
+base_value = 60.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[node name="CharactersStats" type="Node" unique_id=120429728]
+script = ExtResource("1_1kcis")
+stats = Array[ExtResource("2_cf548")]([SubResource("Resource_qwla3"), SubResource("Resource_d565g"), SubResource("Resource_1p1bf"), SubResource("Resource_m55ce"), SubResource("Resource_gft0l"), SubResource("Resource_6jfme"), SubResource("Resource_gj11t"), SubResource("Resource_xo6av"), SubResource("Resource_lcbno"), ExtResource("12_8oliw"), ExtResource("13_stldg"), ExtResource("14_lhvxb"), ExtResource("15_mqna0"), ExtResource("16_d8bbn"), ExtResource("17_3xvq1")])

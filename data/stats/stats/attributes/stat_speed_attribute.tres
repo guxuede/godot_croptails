@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Stat" format=3 uid="uid://dgruerre0hgof"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats/scripts/script_stat.gd" id="1_kcub5"]
+
+[sub_resource type="Resource" id="Resource_kcub5"]
+resource_name = "max_speed"
+script = ExtResource("1_kcub5")
+id = "max_speed"
+base_value = 10.0
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[sub_resource type="Resource" id="Resource_d3gyk"]
+resource_name = "min_speed"
+script = ExtResource("1_kcub5")
+id = "min_speed"
+metadata/_custom_type_script = "uid://i86wxxykecvr"
+
+[resource]
+resource_name = "speed"
+script = ExtResource("1_kcub5")
+id = "speed"
+base_value = 5.0
+min_stat = SubResource("Resource_d3gyk")
+max_stat = SubResource("Resource_kcub5")
+metadata/_custom_type_script = "uid://i86wxxykecvr"

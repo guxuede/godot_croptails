@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bpvxukap2b3r" path="res://scenes/characters/Player/tilling_state.gd" id="8_3a0m7"]
 [ext_resource type="Script" uid="uid://b2cb64ss842c" path="res://scenes/characters/Player/watering_state.gd" id="9_npq42"]
 [ext_resource type="PackedScene" uid="uid://bhu05msdgok4h" path="res://scenes/compoments/hit_compoment.tscn" id="10_3a1rf"]
+[ext_resource type="PackedScene" uid="uid://bx3wtg0cy25gr" path="res://data/stats/characters_stats.tscn" id="11_jierk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ni5up"]
 atlas = ExtResource("1_rhvw2")
@@ -451,3 +452,5 @@ hit_compoment_collision_shape = NodePath("../../HitCompoment/CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitCompoment" unique_id=879393354]
 shape = SubResource("CircleShape2D_jierk")
 debug_color = Color(0.7352291, 0.3946169, 0.66925704, 0.41960785)
+
+[node name="CharactersStats" parent="." unique_id=120429728 instance=ExtResource("11_jierk")]

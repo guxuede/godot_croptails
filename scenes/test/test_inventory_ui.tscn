@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b52vq0y1oocun"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_22tpi"]
+[ext_resource type="Script" uid="uid://d0pfc3q6sof8y" path="res://addons/gloot/ui/ctrl_inventory_grid.gd" id="2_xhv4g"]
+[ext_resource type="Script" uid="uid://5hfig5q3x8it" path="res://addons/gloot/core/inventory.gd" id="3_fjuw4"]
+[ext_resource type="Script" uid="uid://b8hbvp4kl88cn" path="res://addons/gloot/core/constraints/grid_constraint.gd" id="5_bp1gh"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l1tc0"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1tc0"]
+atlas = SubResource("CompressedTexture2D_l1tc0")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbvgr"]
+texture = SubResource("AtlasTexture_l1tc0")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iu55r"]
+texture = SubResource("AtlasTexture_l1tc0")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_328vu"]
+texture = SubResource("AtlasTexture_l1tc0")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_22tpi"]
+
+[node name="Node2D" type="Node2D" unique_id=1517430594]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=251869772]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="CtrlInventoryGrid" type="Control" parent="MarginContainer" unique_id=2136082241 node_paths=PackedStringArray("inventory")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("1_22tpi")
+script = ExtResource("2_xhv4g")
+inventory = NodePath("../../Inventory")
+stretch_item_icons = false
+item_spacing = 11
+field_style = SubResource("StyleBoxTexture_fbvgr")
+field_highlighted_style = SubResource("StyleBoxTexture_iu55r")
+field_selected_style = SubResource("StyleBoxTexture_328vu")
+background_style = SubResource("StyleBoxEmpty_22tpi")
+metadata/_custom_type_script = "uid://d0pfc3q6sof8y"
+
+[node name="Inventory" type="Node" parent="." unique_id=2032305009]
+script = ExtResource("3_fjuw4")
+_serialized_format = {}
+metadata/_custom_type_script = "uid://5hfig5q3x8it"
+
+[node name="GridConstraint" type="Node" parent="Inventory" unique_id=1211861397]
+script = ExtResource("5_bp1gh")
+size = Vector2i(5, 2)

@@ -1,38 +1,15 @@
 [gd_scene format=3 uid="uid://cp2wdp80pp18w"]
 
-[ext_resource type="Script" uid="uid://yutavu8mo0bj" path="res://scenes/objects/plants/corn.gd" id="1_hgaca"]
+[ext_resource type="PackedScene" uid="uid://bbtgbbcfomqre" path="res://scenes/objects/plants/plant_template.tscn" id="1_aphyd"]
 [ext_resource type="Texture2D" uid="uid://x30hl2k8be3p" path="res://assets/game/objects/basic_plants.png" id="1_hm4is"]
-[ext_resource type="PackedScene" uid="uid://bs65pabtitpwa" path="res://scenes/compoments/hurt_compoment.tscn" id="2_aphyd"]
-[ext_resource type="PackedScene" uid="uid://by2jv3dui1mqp" path="res://scenes/objects/plants/watering_partices.tscn" id="2_ofjf8"]
-[ext_resource type="PackedScene" uid="uid://dopilckgg6lhv" path="res://scenes/objects/plants/flowering_partices.tscn" id="3_ofjf8"]
-[ext_resource type="PackedScene" uid="uid://dycu5a8e152u8" path="res://scenes/objects/plants/growth_cycle_compoment.tscn" id="5_q3ekf"]
+[ext_resource type="PackedScene" uid="uid://bjl6u6xmlc0p7" path="res://scenes/objects/plants/corn_harvest.tscn" id="2_ofjf8"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ofjf8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ucl7"]
 atlas = ExtResource("1_hm4is")
-region = Rect2(0, 0, 96, 16)
+region = Rect2(16, 0, 64, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgaca"]
-size = Vector2(13, 8)
+[node name="PlantTemplate" unique_id=688950611 instance=ExtResource("1_aphyd")]
+havest_scene = ExtResource("2_ofjf8")
 
-[node name="Corn" type="Node2D" unique_id=688950611]
-script = ExtResource("1_hgaca")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575364944]
-position = Vector2(0, -4)
-texture = SubResource("AtlasTexture_ofjf8")
-hframes = 6
-frame = 1
-
-[node name="WateringPartices" parent="." unique_id=791934832 instance=ExtResource("2_ofjf8")]
-
-[node name="FloweringPartices" parent="." unique_id=370637163 instance=ExtResource("3_ofjf8")]
-
-[node name="GrowthCycleCompoment" parent="." unique_id=1171869428 instance=ExtResource("5_q3ekf")]
-
-[node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("2_aphyd")]
-position = Vector2(0, -4)
-tool = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1608093673]
-position = Vector2(-0.5, 3)
-shape = SubResource("RectangleShape2D_hgaca")
+[node name="Sprite2D" parent="." index="0" unique_id=1575364944]
+texture = SubResource("AtlasTexture_5ucl7")

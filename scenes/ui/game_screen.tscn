@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://8f4petbcqx7d" path="res://scenes/ui/emotes_panel.tscn" id="2_0kkfd"]
 [ext_resource type="PackedScene" uid="uid://icj1aql0pt0v" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
-[ext_resource type="PackedScene" uid="uid://bgmw1fpqtt87o" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
+[ext_resource type="PackedScene" uid="uid://bgmw1fpqtt87o" path="res://scenes/ui/inventory/inventory_panel.tscn" id="3_gusqm"]
 [ext_resource type="PackedScene" uid="uid://8qpho0ri8727" path="res://scenes/ui/day_and_night_panel.tscn" id="4_gkbp4"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=1672369374]

@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://blk2531844wkl"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_oojn6"]
+[ext_resource type="Script" uid="uid://iluo4htwll2t" path="res://scenes/ui/inventory/inventory_tools_panel.gd" id="2_kq6v2"]
+[ext_resource type="Script" uid="uid://trghhrgo3fax" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="2_oojn6"]
+[ext_resource type="Texture2D" uid="uid://bsst1a78g2j0y" path="res://assets/ui/basic_ui_sprites.png" id="3_tkyds"]
+[ext_resource type="Script" uid="uid://c6wangdtwc4m7" path="res://addons/gloot/core/item_slot.gd" id="5_kq6v2"]
+[ext_resource type="JSON" path="res://data/inventory/protoset_grid.json" id="6_j8b23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq6v2"]
+atlas = ExtResource("3_tkyds")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exnmg"]
+texture = SubResource("AtlasTexture_kq6v2")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j8b23"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exnmg"]
+atlas = SubResource("CompressedTexture2D_j8b23")
+region = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16iax"]
+texture = SubResource("AtlasTexture_exnmg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[node name="InventoryToolsPanel" type="PanelContainer" unique_id=984575234]
+offset_right = 40.0
+offset_bottom = 41.0
+theme = ExtResource("1_oojn6")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_kq6v2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=226418466]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=420059897]
+layout_mode = 2
+
+[node name="CtrlItemSlot" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1011415002 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot" unique_id=1468769253]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")
+
+[node name="CtrlItemSlot2" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1252022413 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot2")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot2" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot2" unique_id=146463191]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")
+
+[node name="CtrlItemSlot3" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1250637564 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot3")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot3" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot3" unique_id=1608233414]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")
+
+[node name="CtrlItemSlot4" type="Control" parent="MarginContainer/HBoxContainer" unique_id=905932504 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot4")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot4" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot4" unique_id=1376587023]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")
+
+[node name="CtrlItemSlot5" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1401132404 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot5")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot5" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot5" unique_id=2051586678]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")
+
+[node name="CtrlItemSlot6" type="Control" parent="MarginContainer/HBoxContainer" unique_id=697942631 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("2_oojn6")
+item_slot = NodePath("ItemSlot6")
+icon_stretch_mode = 5
+slot_style = SubResource("StyleBoxTexture_exnmg")
+slot_highlighted_style = SubResource("StyleBoxTexture_16iax")
+
+[node name="ItemSlot6" type="Node" parent="MarginContainer/HBoxContainer/CtrlItemSlot6" unique_id=18026504]
+script = ExtResource("5_kq6v2")
+protoset = ExtResource("6_j8b23")

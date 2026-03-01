@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bmicqimaygyc1"]
+
+[ext_resource type="Theme" uid="uid://ljcck66th0xd" path="res://scenes/ui/game_ui_theme.tres" id="1_qtnwf"]
+[ext_resource type="Script" uid="uid://cli62x6lxxalq" path="res://scenes/ui/inventory_shop/shop_inventory_item_hover_tip.gd" id="2_iundu"]
+[ext_resource type="Texture2D" uid="uid://bsst1a78g2j0y" path="res://assets/ui/basic_ui_sprites.png" id="3_iundu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cl7pa"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9797335, 0.76242745, 0.3263453, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qya4q"]
+atlas = ExtResource("3_iundu")
+region = Rect2(867, 209, 10, 14)
+
+[node name="InventoryItemHoverTip" type="PanelContainer" unique_id=1540537942]
+offset_right = 33.0
+offset_bottom = 27.0
+theme = ExtResource("1_qtnwf")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cl7pa")
+script = ExtResource("2_iundu")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1950326166]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1633672153]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=834862191]
+layout_mode = 2
+text = "Item Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=41547070]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=463803367]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qya4q")
+
+[node name="PriceLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=107941335]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "99.99"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1409581895]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+bbcode_enabled = true
+text = "this is description"
+fit_content = true

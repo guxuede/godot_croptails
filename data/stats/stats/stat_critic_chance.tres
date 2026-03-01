@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://31m7x4ghsn1h"]
+
+[ext_resource type="Script" uid="uid://i86wxxykecvr" path="res://addons/antipixel_stats_system/scripts/script_stat.gd" id="1_x65ba"]
+
+[resource]
+resource_name = "critic_chance"
+script = ExtResource("1_x65ba")
+id = "critic_chance"
+base_value = 0.5
+metadata/_custom_type_script = "uid://i86wxxykecvr"
