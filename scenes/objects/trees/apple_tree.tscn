@@ -29,7 +29,7 @@ position = Vector2(0, 9.25)
 shape = SubResource("RectangleShape2D_uo82u")
 
 [node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("4_65spk")]
-tool = 1
+tool = "tool_axe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1418342657]
 position = Vector2(0, 5)

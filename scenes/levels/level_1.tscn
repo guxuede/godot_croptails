@@ -5,11 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://fbfhfjldgv1" path="res://scenes/compoments/field_cursor_compoment.tscn" id="2_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://cpj37c71molry" path="res://scenes/houses/large_house.tscn" id="2_x42e6"]
 [ext_resource type="PackedScene" uid="uid://du1nt1mxspvih" path="res://scenes/houses/medium_house.tscn" id="3_6761a"]
-[ext_resource type="Script" uid="uid://s1r5h722dq7u" path="res://scenes/compoments/field_cursor_compoment.gd" id="3_excbq"]
 [ext_resource type="PackedScene" uid="uid://d4i48jhu58dli" path="res://scenes/compoments/crops_cursor_compoment.tscn" id="4_iav0o"]
 [ext_resource type="PackedScene" uid="uid://c5hbcewiietyh" path="res://scenes/houses/small_house.tscn" id="4_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://bfr8qls6k22ea" path="res://scenes/characters/chicken/chicken.tscn" id="5_6761a"]
-[ext_resource type="Script" uid="uid://dncrltry884c1" path="res://scenes/compoments/crops_cursor_compoment.gd" id="5_dnkej"]
 [ext_resource type="PackedScene" uid="uid://dsl7kq4hvi781" path="res://scenes/characters/cow/cow.tscn" id="6_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://btxbvwcktm56e" path="res://scenes/objects/chest/chest.tscn" id="11_dnkej"]
 [ext_resource type="PackedScene" uid="uid://bfld7eo5khdf" path="res://scenes/objects/milk.tscn" id="12_mm8aj"]
@@ -78,14 +76,13 @@ position = Vector2(1824, 624)
 position = Vector2(1106, 439)
 
 [node name="CropsFields" type="Node2D" parent="." unique_id=1954473526]
+y_sort_enabled = true
 
 [node name="FieldCursorCompoment" parent="." unique_id=1258762515 node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("2_qxy0u")]
-script = ExtResource("3_excbq")
 grass_tilemap_layer = NodePath("../GameTileMap/Grass")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="CropsCursorCompoment" parent="." unique_id=1064086711 node_paths=PackedStringArray("tilled_soil_tilemap_layer", "cropFields") instance=ExtResource("4_iav0o")]
-script = ExtResource("5_dnkej")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 cropFields = NodePath("../CropsFields")
 

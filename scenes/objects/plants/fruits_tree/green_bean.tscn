@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://px8tui6e2na5"]
+
+[ext_resource type="PackedScene" uid="uid://bt0mcoiogq48t" path="res://scenes/objects/plants/fruits_tree/fruits_tree_template.tscn" id="1_mis0c"]
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/shake.gdshader" id="2_bxvbr"]
+[ext_resource type="Texture2D" uid="uid://c82ssnmgooije" path="res://assets/game/objects/Summer Crops.png" id="3_mis0c"]
+[ext_resource type="Script" uid="uid://dajl55yivgt0v" path="res://scenes/objects/plants/fruits_tree/GrowthStatePeriod.gd" id="4_bxvbr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxvbr"]
+resource_local_to_scene = true
+shader = ExtResource("2_bxvbr")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e785a"]
+atlas = ExtResource("3_mis0c")
+region = Rect2(0, 328, 112, 24)
+
+[sub_resource type="Resource" id="Resource_e785a"]
+script = ExtResource("4_bxvbr")
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_13nfa"]
+script = ExtResource("4_bxvbr")
+current_growth_frame = 1
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_rw6es"]
+script = ExtResource("4_bxvbr")
+current_growth_frame = 2
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_wh20q"]
+script = ExtResource("4_bxvbr")
+current_growth_frame = 3
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_jppe3"]
+script = ExtResource("4_bxvbr")
+current_growth_state = 1
+current_growth_frame = 4
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_83hv0"]
+script = ExtResource("4_bxvbr")
+current_growth_state = 2
+current_growth_frame = 5
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_ahkw3"]
+script = ExtResource("4_bxvbr")
+current_growth_state = 3
+current_growth_frame = 6
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[node name="GreenBeanTree" unique_id=1304271807 instance=ExtResource("1_mis0c")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=540663762]
+material = SubResource("ShaderMaterial_bxvbr")
+position = Vector2(0, -12)
+texture = SubResource("AtlasTexture_e785a")
+hframes = 7
+
+[node name="FruitsTreeGrowthCycleCompoment" parent="." index="3" unique_id=1171869428]
+growthStatePeriod = Array[ExtResource("4_bxvbr")]([SubResource("Resource_e785a"), SubResource("Resource_13nfa"), SubResource("Resource_rw6es"), SubResource("Resource_wh20q"), SubResource("Resource_jppe3"), SubResource("Resource_83hv0"), SubResource("Resource_ahkw3")])
+VegetativeGrowthStatePeriodIndex = 4
+
+[node name="Inventory" parent="." index="7" unique_id=766687650]
+_serialized_format = {
+"items": [{
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean_seed"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean_seed"
+}],
+"node_name": "Inventory",
+"protoset": "res://data/inventory/protoset_grid.json"
+}

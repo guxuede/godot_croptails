@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://smfts6a1xxef"]
+
+[ext_resource type="PackedScene" uid="uid://bt0mcoiogq48t" path="res://scenes/objects/plants/fruits_tree/fruits_tree_template.tscn" id="1_0g2i2"]
+[ext_resource type="Shader" uid="uid://bs0nj1oyehxji" path="res://scenes/objects/shake.gdshader" id="2_gxmf1"]
+[ext_resource type="Texture2D" uid="uid://d4dnr61bnhhvv" path="res://assets/game/objects/apricot_tree.png" id="2_i6tal"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxmf1"]
+resource_local_to_scene = true
+shader = ExtResource("2_gxmf1")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6tal"]
+atlas = ExtResource("2_i6tal")
+region = Rect2(32, 0, 160, 48)
+
+[node name="ApricotTree" unique_id=1304271807 instance=ExtResource("1_0g2i2")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=540663762]
+material = SubResource("ShaderMaterial_gxmf1")
+texture = SubResource("AtlasTexture_i6tal")

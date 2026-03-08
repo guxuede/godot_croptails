@@ -11,8 +11,7 @@ func _ready() -> void:
 	interactable_componment.interactable_activated.connect(on_interactable_activated)
 	interactable_componment.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_lable_componment.hide()
-	
-	GameDialogueManager.give_crop_seeds.connect(on_give_crop_seeds)
+
 
 func on_interactable_activated() -> void:
 	interactable_lable_componment.show() #???
@@ -28,9 +27,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			var ballon:BaseDialogueManagerBalloon = ballon_scene.instantiate();
 			get_tree().root.add_child(ballon)
 			ballon.start(load("res://dialogue/conversations/guide.dialogue"),"start")
-
-func on_give_crop_seeds()-> void:
-	ToolManager.enable_tool_button(DatTypes.Tools.TillGround)
-	ToolManager.enable_tool_button(DatTypes.Tools.WalterCrops)
-	ToolManager.enable_tool_button(DatTypes.Tools.PlantCorn)
-	ToolManager.enable_tool_button(DatTypes.Tools.PlantTomato)

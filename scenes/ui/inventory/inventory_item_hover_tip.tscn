@@ -37,6 +37,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=834862191]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_c5pmp")
+theme_override_font_sizes/font_size = 10
 text = "Test"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1409581895]

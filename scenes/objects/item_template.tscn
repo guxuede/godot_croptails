@@ -9,6 +9,7 @@ radius = 8.0
 
 [node name="ItemTemplate" type="Sprite2D" unique_id=1844393392]
 editor_description = "this is just a template"
+position = Vector2(0, -8)
 texture = ExtResource("1_bx5u0")
 script = ExtResource("2_x2w2r")
 

@@ -409,8 +409,9 @@ script = ExtResource("1_d0rw3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1843143864]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_b35bq")
-animation = &"watering_right"
+animation = &"walk_front"
 autoplay = "idle_front"
+frame_progress = 0.39428177
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1709685984]
 position = Vector2(0, -1.5)

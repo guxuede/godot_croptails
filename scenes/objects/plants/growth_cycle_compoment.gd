@@ -43,7 +43,7 @@ func game_time_tick_hour(totalHour:int) -> void:
 			crop_harvesting.emit()
 	
 	
-	
+
 func get_current_growth_state() -> DatTypes.GrowthStates:
 	return current_growth_state
 	

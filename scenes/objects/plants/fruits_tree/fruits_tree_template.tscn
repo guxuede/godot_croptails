@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bt0mcoiogq48t"]
+
+[ext_resource type="Script" uid="uid://51ggf8m4cp02" path="res://scenes/objects/plants/fruits_tree/fruits_tree_template.gd" id="1_kobjr"]
+[ext_resource type="Material" uid="uid://djfu3v6d3jgx0" path="res://scenes/compoments/tree_shake_shader_material.tres" id="2_eqa6q"]
+[ext_resource type="PackedScene" uid="uid://by2jv3dui1mqp" path="res://scenes/objects/plants/watering_partices.tscn" id="3_eqa6q"]
+[ext_resource type="Texture2D" uid="uid://d4dnr61bnhhvv" path="res://assets/game/objects/apricot_tree.png" id="3_sdobh"]
+[ext_resource type="PackedScene" uid="uid://dopilckgg6lhv" path="res://scenes/objects/plants/flowering_partices.tscn" id="4_uuvbd"]
+[ext_resource type="PackedScene" uid="uid://cysrsrwseb6tl" path="res://scenes/objects/plants/fruits_tree/fruits_tree_cycle_compoment.tscn" id="6_eqa6q"]
+[ext_resource type="PackedScene" uid="uid://bs65pabtitpwa" path="res://scenes/compoments/hurt_compoment.tscn" id="6_rhbu0"]
+[ext_resource type="PackedScene" uid="uid://c3p8f43k1heu4" path="res://scenes/compoments/damage_compoment.tscn" id="7_1u4yo"]
+[ext_resource type="Script" uid="uid://dajl55yivgt0v" path="res://scenes/objects/plants/fruits_tree/GrowthStatePeriod.gd" id="7_uuvbd"]
+[ext_resource type="Script" uid="uid://5hfig5q3x8it" path="res://addons/gloot/core/inventory.gd" id="10_35vmn"]
+[ext_resource type="JSON" path="res://data/inventory/protoset_grid.json" id="11_ntqt3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u4yo"]
+atlas = ExtResource("3_sdobh")
+region = Rect2(32, 0, 160, 48)
+
+[sub_resource type="Resource" id="Resource_3ch5u"]
+script = ExtResource("7_uuvbd")
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_uuvbd"]
+script = ExtResource("7_uuvbd")
+current_growth_frame = 1
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_rhbu0"]
+script = ExtResource("7_uuvbd")
+current_growth_state = 1
+current_growth_frame = 2
+hours_to_next_state = 5
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_35vmn"]
+script = ExtResource("7_uuvbd")
+current_growth_state = 2
+current_growth_frame = 3
+hours_to_next_state = 10
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="Resource" id="Resource_ntqt3"]
+script = ExtResource("7_uuvbd")
+current_growth_state = 3
+current_growth_frame = 4
+metadata/_custom_type_script = "uid://dajl55yivgt0v"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntqt3"]
+size = Vector2(13, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u4yo"]
+size = Vector2(9, 9)
+
+[node name="FruitTreeTemplate" type="Node2D" unique_id=1304271807]
+script = ExtResource("1_kobjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540663762]
+material = ExtResource("2_eqa6q")
+position = Vector2(0, -20)
+texture = SubResource("AtlasTexture_1u4yo")
+hframes = 5
+
+[node name="WateringPartices" parent="." unique_id=791934832 instance=ExtResource("3_eqa6q")]
+position = Vector2(0, -4)
+
+[node name="FloweringPartices" parent="." unique_id=370637163 instance=ExtResource("4_uuvbd")]
+
+[node name="FruitsTreeGrowthCycleCompoment" parent="." unique_id=1171869428 instance=ExtResource("6_eqa6q")]
+growthStatePeriod = Array[ExtResource("7_uuvbd")]([SubResource("Resource_3ch5u"), SubResource("Resource_uuvbd"), SubResource("Resource_rhbu0"), SubResource("Resource_35vmn"), SubResource("Resource_ntqt3")])
+
+[node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("6_rhbu0")]
+position = Vector2(0, -7)
+tool = "tool_watering"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=971723515]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_ntqt3")
+debug_color = Color(0.7485884, 0.20460835, 1, 0.41960785)
+
+[node name="DamageCompoment" parent="." unique_id=10431394 instance=ExtResource("7_1u4yo")]
+max_damage = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=863248950]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1018748458]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_1u4yo")
+debug_color = Color(0.7041554, 0.45410562, 0.5027783, 0.41960785)
+
+[node name="Inventory" type="Node" parent="." unique_id=766687650]
+script = ExtResource("10_35vmn")
+protoset = ExtResource("11_ntqt3")
+_serialized_format = {
+"items": [{
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "tomato"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "apricot_tree_seed"
+}],
+"node_name": "Inventory",
+"protoset": "res://data/inventory/protoset_grid.json"
+}

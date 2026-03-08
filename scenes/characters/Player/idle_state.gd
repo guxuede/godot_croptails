@@ -28,11 +28,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		transition.emit("Walk")
 	
 	if GameInputEvents.use_tool():
-		if player.current_tool == DatTypes.Tools.AxeWood:
+		if Global.get_selecte_tool_id(player.current_tool) == "tool_axe":
 			transition.emit("Chopping")
-		if player.current_tool == DatTypes.Tools.TillGround:
+		if Global.get_selecte_tool_id(player.current_tool) == "tool_tilling":
 			transition.emit("Tilling")
-		if player.current_tool == DatTypes.Tools.WalterCrops:
+		if Global.get_selecte_tool_id(player.current_tool) == "tool_watering":
 			transition.emit("Watering")
 	
 func on_enter():

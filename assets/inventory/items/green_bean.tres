@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://36anjgqupssu"]
+
+[ext_resource type="Texture2D" uid="uid://c82ssnmgooije" path="res://assets/game/objects/Summer Crops.png" id="1_7f4lf"]
+
+[resource]
+atlas = ExtResource("1_7f4lf")
+region = Rect2(144, 336, 16, 16)

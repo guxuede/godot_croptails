@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c3eniffhm8p1l"]
+
+[ext_resource type="Script" uid="uid://tiirogtmokb4" path="res://equipment_slot.gd" id="1_276gl"]
+[ext_resource type="Script" uid="uid://trghhrgo3fax" path="res://addons/gloot/ui/ctrl_item_slot.gd" id="2_2vcg1"]
+[ext_resource type="Script" uid="uid://c6wangdtwc4m7" path="res://addons/gloot/core/item_slot.gd" id="3_0v7hq"]
+[ext_resource type="JSON" path="res://data/inventory/protoset_grid.json" id="4_mi4kx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6dpme"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxo4u"]
+atlas = SubResource("CompressedTexture2D_6dpme")
+region = Rect2(59, 155, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8k567"]
+texture = SubResource("AtlasTexture_qxo4u")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g0sce"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgm1x"]
+atlas = SubResource("CompressedTexture2D_g0sce")
+region = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dbto"]
+texture = SubResource("AtlasTexture_qgm1x")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[node name="EquipmentSlot" type="Control" unique_id=1683180174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_276gl")
+
+[node name="CtrlItemSlot" type="Control" parent="." unique_id=1930096012 node_paths=PackedStringArray("item_slot")]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("2_2vcg1")
+item_slot = NodePath("ItemSlot")
+slot_style = SubResource("StyleBoxTexture_8k567")
+slot_highlighted_style = SubResource("StyleBoxTexture_1dbto")
+metadata/_custom_type_script = "uid://trghhrgo3fax"
+
+[node name="ItemSlot" type="Node" parent="CtrlItemSlot" unique_id=2027153657]
+script = ExtResource("3_0v7hq")
+protoset = ExtResource("4_mi4kx")
+metadata/_custom_type_script = "uid://c6wangdtwc4m7"

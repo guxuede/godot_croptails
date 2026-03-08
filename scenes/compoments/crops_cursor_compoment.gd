@@ -6,10 +6,6 @@ extends Node2D
 @export var cropFields: Node2D
 @onready var player: Player = get_tree().get_first_node_in_group("player")
 
-var corn_plant_scece = preload("res://scenes/objects/plants/corn.tscn")
-var tomato_plant_scece = preload("res://scenes/objects/plants/tomato.tscn")
-
-
 var mouse_position:Vector2
 var cell_position:Vector2i
 var cell_source_id: int
@@ -18,11 +14,11 @@ var distance: float
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_dirt"):
-		if ToolManager.selected_tool == DatTypes.Tools.TillGround:
+		if ToolManager.get_selecte_tool_id() == "tool_tilling":
 			get_cell_under_mouse()
 			remove_crops()
 	elif event.is_action_pressed("hit"):
-		if ToolManager.selected_tool == DatTypes.Tools.PlantCorn or ToolManager.selected_tool == DatTypes.Tools.PlantTomato:
+		if ToolManager.get_selecte_tool_category() == "Seed":
 			get_cell_under_mouse()
 			add_crops()
 
@@ -39,14 +35,11 @@ func get_cell_under_mouse() -> void:
 func add_crops() -> void:
 	if distance < 60.0 :
 		if cell_source_id != -1:
-			if ToolManager.selected_tool == DatTypes.Tools.PlantCorn:
-				var corn_obj = corn_plant_scece.instantiate() as Node2D
+			if ToolManager.get_selecte_tool_category() == "Seed":
+				var plant_scece = load(ToolManager.selected_tool.get_property("plant_scene")) 
+				var corn_obj = plant_scece.instantiate() as Node2D
 				corn_obj.global_position = local_cell_position
 				cropFields.add_child(corn_obj)
-			if ToolManager.selected_tool == DatTypes.Tools.PlantTomato:
-				var tomato_obj = tomato_plant_scece.instantiate() as Node2D
-				tomato_obj.global_position = local_cell_position
-				cropFields.add_child(tomato_obj)
 		else:
 			print("Please plant in tilled dirt")
 	else:

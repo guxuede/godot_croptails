@@ -24,10 +24,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_cell_under_mouse()
 
 	if event.is_action_pressed("remove_dirt"):
-		if ToolManager.selected_tool == DatTypes.Tools.TillGround:
+		if ToolManager.get_selecte_tool_id() == "tool_tilling":
 			remove_tilled_soil_cell()
 	elif event.is_action_pressed("hit"):
-		if ToolManager.selected_tool == DatTypes.Tools.TillGround:
+		if ToolManager.get_selecte_tool_id() == "tool_tilling":
 			add_tilled_soil_cell()
 
 

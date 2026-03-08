@@ -18,19 +18,19 @@ size = Vector2(13, 8)
 script = ExtResource("1_cs7lv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1575364944]
-position = Vector2(0, -4)
+position = Vector2(0, -7)
 texture = SubResource("AtlasTexture_ofjf8")
-hframes = 4
+hframes = 5
 
 [node name="WateringPartices" parent="." unique_id=791934832 instance=ExtResource("3_j5xne")]
+position = Vector2(0, -4)
 
 [node name="FloweringPartices" parent="." unique_id=370637163 instance=ExtResource("4_jg4hw")]
 
 [node name="GrowthCycleCompoment" parent="." unique_id=1171869428 instance=ExtResource("5_dn33u")]
 
 [node name="HurtCompoment" parent="." unique_id=2092106619 instance=ExtResource("6_w6kp5")]
-position = Vector2(0, -4)
-tool = 3
+position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtCompoment" unique_id=1608093673]
 position = Vector2(-0.5, 3)

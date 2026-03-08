@@ -109,7 +109,9 @@ _serialized_format = {
 "1": "Vector2i(1, 0)",
 "2": "Vector2i(2, 0)",
 "3": "Vector2i(3, 0)",
-"4": "Vector2i(4, 0)"
+"4": "Vector2i(4, 0)",
+"5": "Vector2i(5, 0)",
+"6": "Vector2i(6, 0)"
 },
 "size": "Vector2i(8, 1)"
 },
@@ -131,12 +133,18 @@ _serialized_format = {
 }, {
 "protoset": "res://data/inventory/protoset_grid.json",
 "prototype_id": "tomato_seed"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "apricot_tree_seed"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "green_bean_seed"
 }],
 "node_name": "Inventory",
 "protoset": "res://data/inventory/protoset_grid.json"
 }
 
-[node name="GridConstraint" type="Node" parent="Inventory" unique_id=161103129]
+[node name="GridConstraint" type="Node" parent="Inventory" unique_id=1901847698]
 script = ExtResource("6_exnmg")
 size = Vector2i(8, 1)
 

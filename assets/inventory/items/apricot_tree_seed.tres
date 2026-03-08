@@ -1,0 +1,11 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://0r7lq5thvjr3"]
+
+[ext_resource type="Texture2D" uid="uid://d4dnr61bnhhvv" path="res://assets/game/objects/apricot_tree.png" id="1_3w5v7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s72s"]
+atlas = ExtResource("1_3w5v7")
+region = Rect2(40, 32, 16, 16)
+
+[resource]
+atlas = SubResource("AtlasTexture_6s72s")
+region = Rect2(0, 0, 16, 16)
