@@ -1,5 +1,5 @@
-extends CharacterBody2D
-class_name Player
+extends Player
+class_name Player2
 @onready var hit_compoment: HitCompoment = $HitCompoment
 var current_tool: InventoryItem
 

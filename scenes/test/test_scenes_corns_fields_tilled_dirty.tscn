@@ -2,11 +2,11 @@
 
 [ext_resource type="TileSet" uid="uid://dug2ttlwtc128" path="res://tilesets/game_tile_set.tres" id="1_pwmli"]
 [ext_resource type="PackedScene" uid="uid://dpabu3wul0p56" path="res://scenes/compoments/test_secen_enable_tool_button_componment.tscn" id="1_radyg"]
-[ext_resource type="PackedScene" uid="uid://dx2wcfeo5nh5q" path="res://scenes/characters/Player/player.tscn" id="2_sm1ik"]
-[ext_resource type="PackedScene" uid="uid://d0dhtip02w7f6" path="res://scenes/ui/game_screen.tscn" id="3_ohhso"]
 [ext_resource type="PackedScene" uid="uid://fbfhfjldgv1" path="res://scenes/compoments/field_cursor_compoment.tscn" id="3_pwmli"]
 [ext_resource type="PackedScene" uid="uid://ups4mwctcy0s" path="res://scenes/compoments/day_night_cycle_compoment.tscn" id="4_radyg"]
 [ext_resource type="PackedScene" uid="uid://d4i48jhu58dli" path="res://scenes/compoments/crops_cursor_compoment.tscn" id="5_ohhso"]
+[ext_resource type="PackedScene" uid="uid://8sx0e40cs2y8" path="res://scenes/characters/Player1/Actor.tscn" id="7_ohhso"]
+[ext_resource type="PackedScene" uid="uid://d3crrnekpthjv" path="res://scenes/ui/game_screen_v1.tscn" id="8_ohhso"]
 
 [node name="TestScenesCropsFieldsTilledDirt" type="Node2D" unique_id=982941874]
 
@@ -40,8 +40,7 @@ tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 cropFields = NodePath("../CropsFields")
 
-[node name="Player" parent="." unique_id=662509281 instance=ExtResource("2_sm1ik")]
-position = Vector2(293, 209)
-current_tool = 3
+[node name="Actor" parent="." unique_id=474539142 instance=ExtResource("7_ohhso")]
+position = Vector2(227, 216)
 
-[node name="GameScreen" parent="." unique_id=1672369374 instance=ExtResource("3_ohhso")]
+[node name="GameScreen1" parent="." unique_id=1672369374 instance=ExtResource("8_ohhso")]

@@ -1,5 +1,4 @@
-class_name HurtCompoment
-extends Area2D
+class_name HurtCompoment extends Area2D
 
 @export var tool: String
 

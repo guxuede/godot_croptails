@@ -157,7 +157,9 @@ _serialized_format = {
 "insertion_priority": 0,
 "item_positions": {
 "1": "Vector2i(1, 0)",
-"2": "Vector2i(2, 0)"
+"2": "Vector2i(2, 0)",
+"3": "Vector2i(3, 0)",
+"4": "Vector2i(4, 0)"
 },
 "size": "Vector2i(5, 5)"
 },
@@ -173,12 +175,18 @@ _serialized_format = {
 }, {
 "protoset": "res://data/inventory/protoset_grid.json",
 "prototype_id": "corn_seed"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "iron_sword"
+}, {
+"protoset": "res://data/inventory/protoset_grid.json",
+"prototype_id": "iron_hammer"
 }],
 "node_name": "Inventory",
 "protoset": "res://data/inventory/protoset_grid.json"
 }
 
-[node name="GridConstraint" type="Node" parent="Inventory" unique_id=2090537956]
+[node name="GridConstraint" type="Node" parent="Inventory" unique_id=817381782]
 script = ExtResource("10_6njuc")
 size = Vector2i(5, 5)
 insertion_priority = 0

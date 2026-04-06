@@ -1,5 +1,4 @@
-class_name HitCompoment
-extends Area2D
+class_name HitCompoment extends Area2D
 
 
 var current_tool: InventoryItem
