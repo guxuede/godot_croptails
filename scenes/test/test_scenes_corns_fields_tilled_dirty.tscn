@@ -41,6 +41,7 @@ tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 cropFields = NodePath("../CropsFields")
 
 [node name="Actor" parent="." unique_id=474539142 instance=ExtResource("7_ohhso")]
+y_sort_enabled = true
 position = Vector2(227, 216)
 
 [node name="GameScreen1" parent="." unique_id=1672369374 instance=ExtResource("8_ohhso")]

@@ -36,6 +36,7 @@ var lastGetHurtPosition:Vector2 = Vector2.ZERO
 
 func on_tool_selected(tool: InventoryItem) -> void:
 	current_tool = tool
+	%HitBox.current_tool = tool
 	var image = Global.get_item_hand_image(tool)
 	var hasHandle = Global.get_item_has_handle(tool)
 	if hasHandle:
@@ -50,7 +51,7 @@ func on_tool_selected(tool: InventoryItem) -> void:
 
 func _ready():
 	_init_state_machine()
-	%HitBox.Damaged.connect(takeDamage)
+	#%HitBox.Damaged.connect(takeDamage)
 	ToolManager.tool_selected.connect(on_tool_selected)
 
 
@@ -111,12 +112,12 @@ func playSlashSkill():
 
 
 
-func takeDamage(_damage:int, hitPostion:Vector2) -> void:
-	lastGetHurtPosition = hitPostion
-	blood = blood - _damage
-	print("take damage", _damage, blood)
-	if blood <= 0 and hsm.get_active_state() != dead:
-		print("idel process to dead")
-		hsm.dispatch("dead")
-	else :
-		hsm.dispatch("hurt")
+#func takeDamage(_damage:int, hitPostion:Vector2) -> void:
+	#lastGetHurtPosition = hitPostion
+	#blood = blood - _damage
+	#print("take damage", _damage, blood)
+	#if blood <= 0 and hsm.get_active_state() != dead:
+		#print("idel process to dead")
+		#hsm.dispatch("dead")
+	#else :
+		#hsm.dispatch("hurt")

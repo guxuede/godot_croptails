@@ -12,7 +12,7 @@ func _enter() -> void:
 func _update(delta: float) -> void:
 	if !player.eventHandleEnable:
 		return
-
+	
 	if Input.is_action_just_pressed("ui_use_skill"):
 		get_root().dispatch(EVENT_FINISHED)
 	elif Input.get_vector("move_left", "move_right", "move_up", "move_down").length() > 0:
@@ -32,7 +32,7 @@ func _update(delta: float) -> void:
 		get_root().dispatch(EVENT_FINISHED)
 	else :
 		pass
-		
+
 
 func _exit() -> void:
 	player.velocity = Vector2.ZERO
